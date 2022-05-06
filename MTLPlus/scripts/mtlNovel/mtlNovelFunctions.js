@@ -53,7 +53,6 @@ function saveSettings() {
 	let stringSettings = settings.join(",");
 
 	window.localStorage.setItem("settingList",stringSettings); //default enable all
-	location.reload();
 }
 
 function createSettingsUI() {
@@ -101,6 +100,7 @@ function createSettingsUI() {
 			document.getElementById("inputEnableLightMode").checked = !document.getElementById("inputEnableLightMode").checked;
 			enableLightMode = document.getElementById("inputEnableLightMode").checked;
 			saveSettings();
+			location.reload();
 		}
 
 		lable.appendChild(input);
