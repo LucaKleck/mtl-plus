@@ -111,9 +111,6 @@ header s-input {
     color: #007ead!important;
     box-sizing: border-box!important;
 }
-.ads {
-    display: none!important;
-}
 .filter {
     padding: 10px!important;
     background: #111!important;
