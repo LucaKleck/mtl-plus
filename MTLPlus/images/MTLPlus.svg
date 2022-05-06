@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="MTLPlus.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:lockguides="false"
+     inkscape:zoom="12.241786"
+     inkscape:cx="20.421856"
+     inkscape:cy="26.793476"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer3" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="mirror_symmetry"
+       start_point="18.965988,5.482533"
+       end_point="18.965988,45.978339"
+       center_point="18.965988,25.730436"
+       id="path-effect22849"
+       is_visible="true"
+       lpeversion="1.1"
+       mode="free"
+       discard_orig_path="false"
+       fuse_paths="false"
+       oposite_fuse="false"
+       split_items="false"
+       split_open="false" />
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lstart"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;fill:context-stroke;stroke:context-stroke;stroke-width:1.0pt"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path22548" />
+    </marker>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter27158"
+       x="-0.015576133"
+       y="-0.012520033"
+       width="1.0311523"
+       height="1.0250401">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.0029203379"
+         id="feGaussianBlur27160" />
+    </filter>
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="BG 1">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke:#245ded;stroke-width:1.67724;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:2.7;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect32590"
+       width="46.421227"
+       height="46.502914"
+       x="0.88717729"
+       y="0.88717729"
+       inkscape:export-filename="D:\Workspace VS\Chrome Extentions\BetterMTL\images\icon-128.png"
+       inkscape:export-xdpi="255.04277"
+       inkscape:export-ydpi="255.04277" />
+  </g>
+  <g
+     inkscape:label="BG"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="mix-blend-mode:normal;fill:#133fb3;fill-opacity:1;stroke:#245ded;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:2.7;stroke-opacity:1;paint-order:stroke fill markers;filter:url(#filter27158)"
+       d="M 1.2707581,45.978339 H 6.700361 V 11.66787 l 12.265627,21.24469 c 6.044867,-11.708055 -3.308948,6.685097 -0.02042,-6.55399 L 7.4226761,5.482533 H 1.6173285 C 3.9645004,14.242298 1.2707581,45.978339 1.2707581,45.978339 Z m 35.3904599,0 H 31.231615 V 11.66787 L 18.965988,32.91256 c -6.044867,-11.708055 3.308948,6.685097 0.02042,-6.55399 L 30.5093,5.482533 h 5.805347 c -2.347171,8.759765 0.346571,40.495806 0.346571,40.495806 z"
+       id="path21783"
+       inkscape:path-effect="#path-effect22849"
+       inkscape:original-d="M 1.2707581,45.978339 H 6.700361 V 11.66787 l 12.265627,21.24469 c 6.044867,-11.708055 -3.308948,6.685097 -0.02042,-6.55399 L 7.4226761,5.482533 H 1.6173285 C 3.9645004,14.242298 1.2707581,45.978339 1.2707581,45.978339 Z"
+       transform="translate(4.4319378,-2.0182602)"
+       sodipodi:nodetypes="cccccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 22.662739,32.854798 z m 0,0 z"
+       id="path27162" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="MTL"
+     style="display:inline">
+    <text
+       xml:space="preserve"
+       style="font-size:6.70985px;line-height:1.25;font-family:sans-serif;fill:#333333;stroke-width:0.419368"
+       x="1.2160732"
+       y="38.239643"
+       id="text2475"
+       transform="scale(0.81215293,1.2312952)"><tspan
+         sodipodi:role="line"
+         id="tspan2473"
+         x="1.2160732"
+         y="38.239643"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.15068px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#333333;fill-opacity:1;stroke-width:0.419368">MTL+</tspan></text>
+  </g>
+</svg>

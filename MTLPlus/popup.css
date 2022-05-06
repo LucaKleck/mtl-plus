@@ -1,0 +1,23 @@
+html * {
+    user-select: none;
+}
+body {
+    width: 400px;
+    background-color: #111;
+    color: #ccc;
+}
+.container {
+    border: 2px #ccc solid;
+    border-radius: 20px;
+    padding: 6px;
+}
+main {
+    margin: 3px;
+}
+.heading {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.sub-heading {
+    margin-top: 0px;
+}

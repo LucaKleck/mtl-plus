@@ -1,0 +1,397 @@
+.prev {
+    color: #111!important;
+    display: inline-block!important;
+    width: 80px!important;
+    text-align: center!important;
+    border: 2px solid #a2a2a2!important;
+    background-color: #4e000031!important;
+    border-radius: 30px!important;
+    margin: 2px!important;
+    margin-top: 5px!important;
+    transition: 0.7s!important;
+}
+.prev:hover {
+    color: #111!important;
+    border: 2px solid #d3d1d1!important;
+    background-color: #9b170031!important;
+}
+.next {
+    color: #111!important;
+    display: inline-block!important;
+    width: 80px!important;
+    text-align: center!important;
+    border: 2px solid #a2a2a2!important;
+    background-color: #1f4e0031!important;
+    border-radius: 30px!important;
+    margin: 2px!important;
+    margin-top: 5px!important;
+}
+.next:hover {
+    color: #111!important;
+    border: 2px solid #d3d1d1!important;
+    background-color: #0b9b0031!important;
+    transition: 0.7s!important;
+}
+
+/*Script content*/
+
+.niceButton {
+    color: #111;
+    font-weight: 600;
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 80px;
+    border: 2px solid #d3d1d1;
+    background-color: #1717173d;
+    border-radius: 30px;
+    margin: 2px;
+    margin-top: 5px;
+    transition: 0.7s;
+}
+.niceButton:hover {
+    font-weight: 600;
+    display: inline-block;
+    border: 2px solid #a2a2a2;
+    background-color: #040404;
+}
+.niceButton:hover:active {
+    background-color: #505050;
+}
+.deleted {
+    background-color: #710612;
+}
+.copied {
+    background-color: #06710b;
+}
+.deleted:hover {
+    background-color: #410209;
+}
+.copied:hover {
+    background-color: #045008;
+}
+.deleted:active:hover {
+    background-color: #a7081a;
+}
+.copied:active:hover {
+    background-color: #08a30f;
+}
+.listDiv {
+    padding: 10px;
+    background-color: #ddd;
+    min-height: 50px;
+    width: 98%;
+    box-sizing: border-box;
+    text-align: left;
+    display: block;
+    float: left;
+    border: 1px solid #00000061;
+    margin: 5px 0px 5px 4px;
+    max-width: 100%;
+    min-width: 98%;
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,.1);
+    -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,.1);
+    box-shadow: 0px 0px 8px 0px rgba(0,0,0,.1);
+    position: relative;
+    pointer-events: auto;
+}
+.listElement {
+    color: #fff;
+    background: #444;
+    border-radius: 3px;
+    font-size: 12px;
+    padding: 3px 5px 3px 5px;
+    margin: 3px 3px 3px 3px;
+    display: inline-block;
+}
+.listBtn {
+    color: #777;
+    display: block;
+}
+.listDiv:not(customExpanded) h2{
+    background: #ddd url(https://www.mtlnovel.net/themes/mtlnovel/images/chevron-down.svg) 2px 9px no-repeat;
+    background-position: calc(100% - 10px);
+}
+.listDiv:not(customExpanded) span {
+    display: none;
+}
+.listDiv.customExpanded h2 {
+    background: #ddd url(https://www.mtlnovel.net/themes/mtlnovel/images/chevron-up.svg) 2px 9px no-repeat;
+    background-position: calc(100% - 10px);
+}
+.listDiv.customExpanded span {
+    display: inline-block;
+}
+.expandBtn {
+    appearance: none;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    text-align: center;
+    align-items: flex-start;
+    cursor: pointer;
+    background-color: #ddd;
+    min-height: 50px;
+    box-sizing: border-box;
+    text-align: left;
+    display: block;
+    border: 0px solid #000;
+    margin: 5px 0px 5px 4px;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    position: relative;
+    pointer-events: auto;
+}
+div button.emptyBtn {
+    position: relative;
+    right: 10px;
+    padding: 3px;
+    margin: 3px;
+    width: 28px;
+    height: 28px;
+    background-color: #2705055e;
+    border-color: #1111113d;
+    cursor: pointer;
+}
+span button.emptyBtn {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #29282800;
+    border-color: #1110;
+    cursor: pointer;
+}
+a button.emptyBtn {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #29282800;
+    border-color: #1110;
+    cursor: pointer;
+    pointer-events: initial;
+}
+.box.wide.customHighlight {
+    border-color: #6d1212!important;
+    border: 2px solid #6d1212!important;
+}
+.customHighlight {
+    border-color: #6d1212!important;
+    border: 2px solid #6d1212!important;
+}
+a.genre {
+    pointer-events: none;
+}
+#inputCopyAmountLbl {
+    color: #111;
+    font-weight: 600;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px solid #d3d1d1;
+    background-color: #1717173d;
+    border-radius: 30px;
+    margin: 2px;
+    transition: 0.7s;
+    width: 120px;
+}
+#inputCopyAmountLbl::-webkit-inner-spin-button, #inputCopyAmountLbl::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    background: #fff    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=)     no-repeat center center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1em;
+    border-left: 1px solid #bbb;
+    opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .lblSettig {
+    vertical-align: middle;
+  }
+  
+/* The switch - the box around the slider */
+.switch {
+    position: relative!important;
+    display: inline-block!important;
+    width: 60px!important;
+    height: 34px!important;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0!important;
+    width: 0!important;
+    height: 0!important;
+  }
+  
+  /* The slider */
+  
+  .toggle {
+    --width: 80px;
+    --height: calc(var(--width) / 3);
+
+    position: relative;
+    display: inline-block;
+    width: var(--width);
+    height: var(--height);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    border-radius: var(--height);
+    cursor: pointer;
+  }
+
+  .toggle input {
+    display: none;
+  }
+
+  .toggle .slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--height);
+    background-color: #ccc;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .toggle .slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(var(--height));
+    height: calc(var(--height));
+    border-radius: calc(var(--height) / 2);
+    background-color: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .toggle input:checked+.slider {
+    background-color: #2196F3;
+  }
+
+  .toggle input:checked+.slider::before {
+    transform: translateX(calc(var(--width) - var(--height)));
+  }
+
+  /* Adding text in the toggle button */
+.toggle .labels {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    font-family: sans-serif;
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::after {
+    content: attr(data-off);
+    position: absolute;
+    right: 5px;
+    color: #4d4d4d;
+    opacity: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle .labels::before {
+    content: attr(data-on);
+    position: absolute;
+    left: 5px;
+    color: #ffffff;
+    opacity: 0;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+    transition: all 0.4s ease-in-out;
+}
+
+.toggle input:checked~.labels::after {
+    opacity: 0;
+}
+
+.toggle input:checked~.labels::before {
+    opacity: 1;
+}
+
+.textForToggle {
+    height: 36px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 600;
+    margin-left: 12px;
+    margin-right: 3px;
+}
+
+.settingContainer {
+    display: block;
+}
