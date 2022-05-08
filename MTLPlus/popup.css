@@ -1,9 +1,33 @@
+:root {
+    --background-surface: #201e22;
+    --background-darkend: #0c0b0e;
+    --background-element: #151318;
+    --background-accent: #231f27;
+    --background-brightAccent: #e5d6ee;
+    --elemLayer: #1f1e24;
+    --elemLayer-accent: #312e38;
+    --textOnElem: #d4c8e0;
+    --textOnElemGrey:#8a8294e;
+    --secondary-main: #045b62;
+    --secondary-accent: #3d8086;
+    --secondary-elem: #0d484e;
+    --secondary-dark: #02393e;
+    --colorLink: #faa2b1;
+    --colorLinkVisited: #e2397a;
+    --noColor: #0000;
+}
 html * {
     user-select: none;
 }
+a {
+    color: var(--colorLink);
+}
+a:visited {
+    color: var(--colorLinkVisited);
+}
 body {
     width: 400px;
-    background-color: #111;
+    background-color: var(--background-surface);
     color: #ccc;
 }
 .container {

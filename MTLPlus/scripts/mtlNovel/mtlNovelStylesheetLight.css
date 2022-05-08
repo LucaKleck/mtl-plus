@@ -4,10 +4,15 @@
     --background-element: #fff;
     --background-accent: #00a0da;
     --elemLayer: #fff;
+    --textOnElem: #000;
     --elemLayer-accent: #007ead;
     --onBG-elem: #c7c1ce;
-    --colorLink: #294c99;
-    --colorLinkVisited: #472999;
+    --colorLink: #faa2b1;
+    --colorLinkVisited: #e2397a;
+    --secondary-main: #045b62;
+    --secondary-accent: #3d8086;
+    --secondary-elem: #0d484e;
+    --secondary-dark: #02393e;
     --noColor: #0000;
 }
 .prev {
@@ -174,29 +179,41 @@
     width: 30px;
     height: 30px;
     text-align: center;
+    user-select: none;
     background-color: var(--elemLayer-accent);
     border-radius: 12px;
     box-shadow: 0px 0px 1px 1px var(--background-darkend);
 }
 .rmvBtn:hover {
+    color: var(--elemLayer);
     background-color: var(--background-accent);
+    user-select: none;
     transition: 0.2s;
 }
 .filterBtn, .addHighlightBtn {
     pointer-events: auto;
+    user-select: none;
     margin-left: 3px;
     padding: 0px;
 }
+.filterBtn:hover, .addHighlightBtn:hover {
+    color: var(--background-element)!important;
+}
+.filterBtn:active, .addHighlightBtn:active {
+    color: var(--elemLayer-accent)!important;
+}
 .box.wide.customHighlight {
     border-color: #6d1212!important;
-    border: 2px solid #6d1212!important;
+    border-bottom: 2px solid #6d1212!important;
 }
 .customHighlight {
     border-color: #6d1212!important;
-    border: 2px solid #6d1212!important;
+    border-bottom: 2px solid #6d1212!important;
 }
-a.genre {
+a.genre, a.genre:hover {
     pointer-events: none;
+    text-decoration: none!important;
+    color: var(--background-element)!important;
 }
 #inputCopyAmountLbl {
     color: #111;

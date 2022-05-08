@@ -119,44 +119,6 @@ function createSettingsUI() {
 		let container = document.createElement("span");
 		
 		let text = document.createElement("div");
-		text.innerText = "Enable Novel Highlight";
-		text.setAttribute("class", "textForToggle");
-
-		let lable = document.createElement("lable");
-		lable.setAttribute("class", "toggle");
-		let input = document.createElement("input");
-		input.setAttribute("type","checkbox");
-		input.id = "inputEnableNovelHighlight"
-		input.checked = enableNovelHighlight;
-		let span = document.createElement("span");
-		span.setAttribute("class", "slider");
-		let onOffSpan = document.createElement("span");
-		onOffSpan.setAttribute("class", "labels");
-		onOffSpan.setAttribute("data-on", "ON");
-		onOffSpan.setAttribute("data-off", "OFF");
-
-		onOffSpan.onclick  = function () {
-			document.getElementById("inputEnableNovelHighlight").checked = !document.getElementById("inputEnableNovelHighlight").checked;
-			enableNovelHighlight = document.getElementById("inputEnableNovelHighlight").checked;
-			saveSettings();
-		}
-
-		lable.appendChild(input);
-		lable.appendChild(span);
-		lable.appendChild(onOffSpan);
-		
-		container.appendChild(lable);
-		container.appendChild(text);
-
-		let newline = document.createElement("div");
-
-		containerDiv.appendChild(container);
-		containerDiv.appendChild(newline);
-	}
-	{
-		let container = document.createElement("span");
-		
-		let text = document.createElement("div");
 		text.innerText = "Enable Novel Ignore List";
 		text.setAttribute("class", "textForToggle");
 
@@ -176,6 +138,44 @@ function createSettingsUI() {
 		onOffSpan.onclick  = function () {
 			document.getElementById("inputEnableIgnoreList").checked = !document.getElementById("inputEnableIgnoreList").checked;
 			enableNovelIgnore = document.getElementById("inputEnableIgnoreList").checked;
+			saveSettings();
+		}
+
+		lable.appendChild(input);
+		lable.appendChild(span);
+		lable.appendChild(onOffSpan);
+		
+		container.appendChild(lable);
+		container.appendChild(text);
+
+		let newline = document.createElement("div");
+
+		containerDiv.appendChild(container);
+		containerDiv.appendChild(newline);
+	}
+	{
+		let container = document.createElement("span");
+		
+		let text = document.createElement("div");
+		text.innerText = "Enable Novel Highlight";
+		text.setAttribute("class", "textForToggle");
+
+		let lable = document.createElement("lable");
+		lable.setAttribute("class", "toggle");
+		let input = document.createElement("input");
+		input.setAttribute("type","checkbox");
+		input.id = "inputEnableNovelHighlight"
+		input.checked = enableNovelHighlight;
+		let span = document.createElement("span");
+		span.setAttribute("class", "slider");
+		let onOffSpan = document.createElement("span");
+		onOffSpan.setAttribute("class", "labels");
+		onOffSpan.setAttribute("data-on", "ON");
+		onOffSpan.setAttribute("data-off", "OFF");
+
+		onOffSpan.onclick  = function () {
+			document.getElementById("inputEnableNovelHighlight").checked = !document.getElementById("inputEnableNovelHighlight").checked;
+			enableNovelHighlight = document.getElementById("inputEnableNovelHighlight").checked;
 			saveSettings();
 		}
 
