@@ -233,5 +233,5 @@ function createSettingsUI() {
 }
 
 function getElemHTML(element) {
-    return element.innerHTML.replace("<button class=\"emptyBtn filterBtn\">✖</button>","").replace("<button class=\"emptyBtn addFilterBtn\">✚</button>","");
+    return element.textContent.replace("✖","").replace("✚","");
 }

@@ -2,6 +2,11 @@ createFilterList();
 // create filterList var
 var filterList = window.localStorage.getItem("filterList").split(','); // creates String array
 if(enableNovelFilter) createUiElements();
+if(document.getElementsByClassName("m-card single-page")[0] != undefined) {
+    let tmp = document.createElement("h1");
+    tmp.innerText = "⠀";
+    document.getElementsByClassName("m-card single-page")[0].appendChild(tmp);
+}
 
 function createFilterList() {
     // create filterList if null

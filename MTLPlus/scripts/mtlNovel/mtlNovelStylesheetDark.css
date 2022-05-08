@@ -30,6 +30,9 @@ div {
 .warning {
     display: none!important;
 }
+.s-input {
+    border-bottom: 1px var(--secondary-accent) solid !important;
+}
 a {
     color: var(--colorLink)!important;
 }
@@ -40,10 +43,10 @@ a:visited {
     color: var(--colorLinkVisited)!important;
 }
 .sug-list, .i-amphtml-fill-content.i-amphtml-replaced-content {
-    background-color: var(--background-element)!important;
+    background-color: var(--secondary-elem)!important;
 }
 .logo, .logo:visited {
-    color: var(--secondary-accent)!important;
+    color: white!important;
 }
 .logo .i-amphtml-fill-content.i-amphtml-replaced-content{
     background-color: var(--noColor)!important;
@@ -110,16 +113,24 @@ header * {
 }
 #toolbar {
     vertical-align: bottom;
+    user-select: none;
 }
 #toolbar a:hover, .nav span:hover {
     background-color: var(--secondary-dark)!important;
+    border-color: var(--secondary-dark);
     color: #007ead!important;
+}
+#toolbar a:active, .nav span:active {
+    background-color: var(--secondary-main)!important;
+    border-color: var(--secondary-dark);
 }
 #toolbar a, .nav span {
     background-color: var(--secondary-elem)!important;
+    border: 1px var(--secondary-elem) solid!important;
 }
 #lang-btn {
     border-color: var(--secondary-dark)!important;
+    user-select: none;
 }
 #lang-list {
     background-color: var(--secondary-main)!important;
@@ -154,9 +165,9 @@ header s-input {
 }
 .filter {
     padding: 10px!important;
-    background: var(--background-surface)!important;
+    background: var(--noColor)!important;
     border-radius: 6px!important;
-    border: 1px solid #007ead!important;
+    border: 0px solid #007ead!important;
     color: var(--textOnElem)!important;
     font-size: 14px!important;
 }
@@ -180,7 +191,16 @@ select {
 }
 .p {
     color:var(--textOnElem)!important;
-    font-family: Tahoma, Verdana, Segoe, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px;
+    font-family: Tahoma, Verdana, Segoe, sans-serif!important; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px!important;
+}
+.list-but-add {
+    background-color: var(--secondary-elem)!important;
+}
+.list-but-add:hover {
+    background-color: var(--secondary-main)!important;
+}
+.list-but-add:active {
+    background-color: var(--secondary-dark)!important;
 }
 ul.cat-list li {
     display: inline-block!important;
@@ -386,8 +406,8 @@ div.sug-list a span {
     pointer-events: auto;
 }
 .listElement {
-    color: #fff;
-    background: #444;
+    color: var(--textOnElem);
+    background: var(--secondary-elem);
     border-radius: 3px;
     font-size: 12px;
     padding: 3px 5px 3px 5px;
@@ -468,14 +488,22 @@ div.sug-list a span {
     margin-left: 3px;
     padding: 0px;
 }
+.filterBtn:hover, .addHighlightBtn:hover {
+    color: var(--textOnElem)!important;
+}
+.filterBtn:active, .addHighlightBtn:active {
+    color: var(--colorLinkVisited)!important;
+}
 .box.wide.customHighlight {
     border-color: #6d1212!important;
 }
 .customHighlight {
     border-color: #6d1212!important;
 }
-a.genre {
+a.genre, a.genre:hover {
     pointer-events: none;
+    text-decoration: none!important;
+    background-color: var(--secondary-elem)!important;
     color: var(--textOnElem)!important;
 }
 #inputCopyAmountLbl {
@@ -653,4 +681,11 @@ a.recent-novels:hover {
 }
 .i-amphtml-layout-size-de {
     height: 312px;
+}
+.data-r p {
+    min-height: 110px;
+}
+
+.ads {
+    display: none;
 }
