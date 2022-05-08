@@ -1,4 +1,4 @@
-createFilterList();
+createHighlightList();
 // create highlight var
 var highlightList = window.localStorage.getItem("highlightList").split(','); // creates String array
 if(enableNovelHighlight) createUiElements();
