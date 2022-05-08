@@ -1,3 +1,15 @@
+:root {
+    --background-surface: #fff;
+    --background-darkend: #adadad;
+    --background-element: #fff;
+    --background-accent: #00a0da;
+    --elemLayer: #fff;
+    --elemLayer-accent: #007ead;
+    --onBG-elem: #c7c1ce;
+    --colorLink: #294c99;
+    --colorLinkVisited: #472999;
+    --noColor: #0000;
+}
 .prev {
     color: #111!important;
     display: inline-block!important;
@@ -143,37 +155,32 @@
     position: relative;
     pointer-events: auto;
 }
-div button.emptyBtn {
+.emptyBtn, .rmvBtn {
     position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-weight: 600;
+    background-color: var(--noColor);
+    border-color: var(--noColor);
+    cursor: pointer;
+}
+.rmvBtn {
+    font-size: 16px;
     right: 10px;
     padding: 3px;
     margin: 3px;
-    width: 28px;
-    height: 28px;
-    background-color: #2705055e;
-    border-color: #1111113d;
-    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: var(--elemLayer-accent);
+    border-radius: 12px;
+    box-shadow: 0px 0px 1px 1px var(--background-darkend);
 }
-span button.emptyBtn {
-    position: relative;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #29282800;
-    border-color: #1110;
-    cursor: pointer;
-}
-a button.emptyBtn {
-    position: relative;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #29282800;
-    border-color: #1110;
-    cursor: pointer;
-    pointer-events: initial;
+.rmvBtn:hover {
+    background-color: var(--background-accent);
+    transition: 0.2s;
 }
 .box.wide.customHighlight {
     border-color: #6d1212!important;
@@ -395,4 +402,3 @@ a.genre {
 .settingContainer {
     display: block;
 }
-

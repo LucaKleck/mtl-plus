@@ -39,7 +39,7 @@ function createUiElements() {
         // Button to remove item from the list (highlightList)
         let removeFromListBtn = document.createElement("button");
         removeFromListBtn.innerHTML = "&#10006;";
-        removeFromListBtn.className = "emptyBtn";
+        removeFromListBtn.className = "emptyBtn filterBtn";
         removeFromListBtn.onclick = function() {
             let elemGen = highlightTag;
             highlightList.splice(highlightList.indexOf(elemGen),1);
@@ -58,8 +58,8 @@ function createUiElements() {
             element.href = ".";
             // Button to add item to the list (highlightList)
             let addToListBtn = document.createElement("button");
-            addToListBtn.innerHTML = "+";
-            addToListBtn.className = "emptyBtn";
+            addToListBtn.innerHTML = "✚";
+            addToListBtn.className = "emptyBtn addHighlightBtn";
             addToListBtn.onclick = function() {
                 let elem = element;
                 let elemGen = getElemHTML(element);
@@ -102,8 +102,4 @@ function highlightItems(element) {
         return true;
     }
     return false;
-}
-
-function getElemHTML(element) {
-    return element.innerHTML.replace("<button class=\"emptyBtn\">✖</button>","").replace("<button class=\"emptyBtn\">+</button>","");
 }

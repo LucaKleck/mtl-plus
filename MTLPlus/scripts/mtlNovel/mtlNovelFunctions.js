@@ -231,3 +231,7 @@ function createSettingsUI() {
 	}
 	return containerDiv;
 }
+
+function getElemHTML(element) {
+    return element.innerHTML.replace("<button class=\"emptyBtn filterBtn\">✖</button>","").replace("<button class=\"emptyBtn addFilterBtn\">✚</button>","");
+}

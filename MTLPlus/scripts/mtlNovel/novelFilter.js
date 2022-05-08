@@ -39,7 +39,7 @@ function createUiElements() {
         // Button to remove item from the list (filterList)
         let removeFromListBtn = document.createElement("button");
         removeFromListBtn.innerHTML = "&#10006;";
-        removeFromListBtn.className = "emptyBtn";
+        removeFromListBtn.className = "emptyBtn filterBtn";
         removeFromListBtn.onclick = function() {
             let elemGen = filterTag;
             filterList.splice(filterList.indexOf(elemGen),1);
@@ -57,7 +57,7 @@ function createUiElements() {
             // Button to add item to the list (filterList)
             let addToListBtn = document.createElement("button");
             addToListBtn.innerHTML = "&#10006;";
-            addToListBtn.className = "emptyBtn";
+            addToListBtn.className = "emptyBtn filterBtn";
             addToListBtn.onclick = function() {
                 let elem = genreTag;
                 let elemGen = getElemHTML(genreTag);
@@ -100,8 +100,4 @@ function filterItems(element) {
         return true;
     }
     return false;
-}
-
-function getElemHTML(element) {
-    return element.innerHTML.replace("<button class=\"emptyBtn\">✖</button>","").replace("<button class=\"emptyBtn\">+</button>","");
 }

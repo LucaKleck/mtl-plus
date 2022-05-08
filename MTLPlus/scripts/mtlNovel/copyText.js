@@ -42,7 +42,7 @@ function copyText() {
 			storedText += text;
 			lStorage.setItem("textContent",storedText);
 		}
-
+		/* Disabled unti option is created
 		// mark selected
 		if (document.body.createTextRange) {
 			const range = document.body.createTextRange();
@@ -57,7 +57,7 @@ function copyText() {
 		} else {
 			console.warn("Could not select text in node: Unsupported browser.");
 		}
-
+		*/
 		if(window.localStorage.getItem("copyAmount") > 0) {
 			window.localStorage.setItem("copyAmount",(parseInt(window.localStorage.getItem("copyAmount"))-1) );
 			nextChapter();

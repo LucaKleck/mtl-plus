@@ -8,7 +8,7 @@ function addButtonsToGenreElems() {
         element.href = ".";
         let addToFilterListBtn = document.createElement("button");
         addToFilterListBtn.innerHTML = "&#10006;";
-        addToFilterListBtn.className = "emptyBtn";
+        addToFilterListBtn.className = "emptyBtn filterBtn";
         addToFilterListBtn.onclick = function() {
             let elem = element;
             let elemGen = getElemHTML(element);
@@ -17,8 +17,8 @@ function addButtonsToGenreElems() {
         }
         element.appendChild(addToFilterListBtn);
         let addToHighlightListBtn = document.createElement("button");
-        addToHighlightListBtn.innerHTML = "+";
-        addToHighlightListBtn.className = "emptyBtn";
+        addToHighlightListBtn.innerHTML = "✚";
+        addToHighlightListBtn.className = "emptyBtn addHighlightBtn";
         addToHighlightListBtn.onclick = function() {
             let elem = element;
             let elemGen = getElemHTML(element);
@@ -27,8 +27,4 @@ function addButtonsToGenreElems() {
         }
         element.appendChild(addToHighlightListBtn);
     }
-}
-
-function getElemHTML(element) {
-    return element.innerHTML.replace("<button class=\"emptyBtn\">✖</button>","").replace("<button class=\"emptyBtn\">+</button>","");
 }

@@ -62,7 +62,3 @@ function highlightItems(element) {
     }
     return false;
 }
-
-function getElemHTML(element) {
-    return element.innerHTML.replace("<button class=\"emptyBtn\">✖</button>","").replace("<button class=\"emptyBtn\">+</button>","");
-}

@@ -1,33 +1,59 @@
-body {
-    background-color: rgb(22, 22, 22)!important;
+:root {
+    --background-surface: #201e22;
+    --background-darkend: #0c0b0e;
+    --background-element: #151318;
+    --background-accent: #231f27;
+    --elemLayer: #222027;
+    --elemLayer-accent: #312e38;
+    --onBG-elem: #c7c1ce;
+    --secondary-main: #025a6c;
+    --colorLink: #e295a2;
+    --colorLinkVisited: #a87b8c;
+    --noColor: #0000;
 }
-
+body {
+    background-color: var(--background-surface)!important;
+}
 div {
-    color: #777!important;
-    background-color: #111!important;
+    color: var(--onBG-elem)!important;
+}
+.list-title {
+    color: #9e9e9e!important;
+}
+.list-title:visited {
+    color: #f7f7f7!important;
+}
+.warning {
+    display: none;
+}
+a {
+    color: var(--colorLink)!important;
+}
+a:visited {
+    color: var(--colorLinkVisited)!important;
 }
 #toolbar a:hover {
     background-color: #000!important;
 }
 .rev-wrap {
-    background-color: #111!important;
+    background-color: var(--background-surface)!important;
     border-color: #222!important;
 }
 .info-wrap {
-    background-color: #111!important;
+    background-color: var(--background-surface)!important;
 }
 #sidebar {
-    background-color: #111!important;
+    background-color: var(--background-surface)!important;
 }
 .lang-btn {
     user-select: none!important;
 }
 .chapter-nav {
     user-select: none!important;
-    background-color: #111!important;
+    background-color: var(--background-surface)!important;
 }
 .prev {
-    color: #bfbfbf!important;
+    color: var(--onBG-elem)!important;
     display: inline-block!important;
     width: 80px!important;
     text-align: center!important;
@@ -39,12 +65,12 @@ div {
     transition: 0.7s!important;
 }
 .prev:hover {
-    color: #e3e3e3!important;
+    color: var(--onBG-elem)!important;
     border: 2px solid #d3d1d1!important;
     background-color: #9b170031!important;
 }
 .next {
-    color: #bfbfbf!important;
+    color: var(--onBG-elem)!important;
     display: inline-block!important;
     width: 80px!important;
     text-align: center!important;
@@ -55,17 +81,13 @@ div {
     margin-top: 5px!important;
 }
 .next:hover {
-    color: #e3e3e3!important;
+    color: var(--onBG-elem)!important;
     border: 2px solid #d3d1d1!important;
     background-color: #0b9b0031!important;
     transition: 0.7s!important;
 }
-.m-card {
-    background-color: rgb(22, 22, 22)!important;
-}
 header {
-    background-color: #03545dfc!important;
-    
+    background-color: var(--secondary-main)!important;
 }
 header * {
     background-color: inherit!important;
@@ -81,7 +103,7 @@ header * {
     background-color: #0c134d21!important;
 }
 header s-input {
-    background-color: #111!important;
+    background-color: var(--background-surface)!important;
 }
 .link-title {
     display: none!important;
@@ -100,7 +122,7 @@ header s-input {
     display: block!important;
     margin: 4px 0!important;
     padding: 8px 16px!important;
-    color: #777!important;
+    color: var(--onBG-elem)!important;
     box-sizing: border-box!important;
 }
 #panelchapterlist p a:hover {
@@ -113,37 +135,35 @@ header s-input {
 }
 .filter {
     padding: 10px!important;
-    background: #111!important;
+    background: var(--background-surface)!important;
     border-radius: 6px!important;
     border: 1px solid #007ead!important;
-    color: #777!important;
+    color: var(--onBG-elem)!important;
     font-size: 14px!important;
 }
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    color: #777!important;
+    color: var(--onBG-elem)!important;
 }
 .main-title {
     margin: 0 0 10px!important;
-    color: #777!important;
+    color: var(--onBG-elem)!important;
     border-bottom: 1px solid #000!important;
     padding-bottom: 5px!important;
 }
 select {
-    color:#777!important;
-    background-color: #111!important;
+    color:var(--onBG-elem)!important;
+    background-color: var(--background-surface)!important;
     border: 2px solid #1e1e1e!important;
 }
-input {
-    color:#777!important;
-    background-color: #111!important;
-    border: 2px solid #1e1e1e!important;
+.sug-list, .i-amphtml-fill-content.i-amphtml-replaced-content {
+    background-color: var(--background-element)!important;
 }
 .filter-menu label {
     font-size: 14px!important;
-    color:#777!important;
+    color:var(--onBG-elem)!important;
 }
 .p {
-    color:#777!important;
+    color:var(--onBG-elem)!important;
 }
 ul.cat-list li {
     display: inline-block!important;
@@ -154,7 +174,7 @@ ul.cat-list li {
     text-overflow: ellipsis!important;
     padding: 0px 7px 0px 0px!important;
     background: #080808!important;
-    color: #777!important;
+    color: var(--onBG-elem)!important;
     border-radius: 0px!important;
     text-align: start!important;
 }
@@ -192,33 +212,32 @@ ul {
     padding-inline-start: 0px!important;
 }
 amp-accordion section:not([expanded]) h2 {
-    background: #0d0c0c url(https://www.mtlnovel.net/themes/mtlnovel/images/chevron-down.svg) 2px 9px no-repeat!important;
+    background: var(--background-accent) url(https://www.mtlnovel.net/themes/mtlnovel/images/chevron-down.svg) 2px 9px no-repeat!important;
     background-position: calc(100% - 10px)!important;
     border-color: #000!important;
 }
 amp-accordion section[expanded] h2 {
-    background: #0d0c0c url("https://www.mtlnovel.net/themes/mtlnovel/images/chevron-up.svg") 2px 9px no-repeat!important;
+    background: var(--background-accent) url("https://www.mtlnovel.net/themes/mtlnovel/images/chevron-up.svg") 2px 9px no-repeat!important;
     background-position: calc(100% - 10px)!important;
     border-color: #000!important;
 }
 amp-accordion section:not([expanded]) h2, amp-accordion section:not([expanded]) h3 {
-    background: #0d0c0c url("https://www.mtlnovel.net/themes/mtlnovel/images/chevron-down.svg") 2px 9px no-repeat!important;
+    background: var(--background-accent) url("https://www.mtlnovel.net/themes/mtlnovel/images/chevron-down.svg") 2px 9px no-repeat!important;
     background-position: calc(100% - 10px)!important;
     border-color: #000!important;
 }
 amp-accordion section[expanded] h2, amp-accordion section[expanded] h3 {
-    background: #0d0c0c url(https://www.mtlnovel.net/themes/mtlnovel/images/chevron-up.svg) 2px 9px no-repeat!important;
+    background: var(--background-accent) url(https://www.mtlnovel.net/themes/mtlnovel/images/chevron-up.svg) 2px 9px no-repeat!important;
     background-position: calc(100% - 10px)!important;
     border-color: #000!important;
 }
 .m-card {
     position: relative!important;
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.24),0 1px 2px rgba(0,0,0,.48)!important;
-    box-shadow: 0 1px 3px rgba(0,0,0,.24),0 1px 2px rgba(0,0,0,.48)!important;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.123),0px 0px 0px 0px rgba(0, 0, 0, 0.274)!important;
     border-radius: 8px!important;
     width: 100%!important;
     color: rgba(0,0,0,.9)!important;
-    background-color: #111!important;
+    background-color: var(--background-element)!important;
     padding: 16px!important;
     box-sizing: border-box!important;
     margin: 24px 0!important;
@@ -227,18 +246,15 @@ tr.odd, li.odd, p.odd, a.odd {
     background: #222!important;
 }
 .box {
-    border: 1px solid #1e1e1e!important;
+    border: 1px solid var(--background-element)!important;
 }
 .box:hover{
-    background: #0d0c0c!important;
-}
-.box:hover div{
-    background-color: #0d0c0c!important;
+    background-color: var(--background-accent)!important;
 }
 .site-footer ,.site-footer *{
     padding-top: 1.5em!important;
-    color: #777!important;
-    background-color: rgb(22, 22, 22)!important;
+    color: var(--onBG-elem)!important;
+    background-color: var(--background-surface)!important;
 }
 .ch-link {
     pointer-events: auto!important;
@@ -258,35 +274,27 @@ div a:visited strong {
 }
 #comment {
     background-color: #222!important;
-    color: #777!important;
-}
-a:visited {
-    color:#163f66!important;
-}
-td a:visited {
-    color:#163f66!important;
+    color: var(--onBG-elem)!important;
 }
 .entry-title {
-    color: #777!important;
+    color: var(--onBG-elem)!important;
 }
 nav ul li a:visited {
-    color: #777!important;
+    color: var(--onBG-elem)!important;
 }
 div.sug-list a span {
-    color: #777!important;
+    color: var(--onBG-elem)!important;
 }
 .box.wide:hover {
-    background: #0d0c0c!important;
+    background: var(--background-accent)!important;
     padding: 12px!important;
-    border: 2px solid!important;
-    border-radius: 6px!important;
-    border-color: #111!important;
 }
 .box.wide {
     padding: 12px!important;
-    border: 2px solid!important;
-    border-radius: 6px!important;
-    border-color: #7a7a7a0a!important;
+    border-radius: 12px!important;
+    box-shadow: 1px 1px 1px 1px var(--background-darkend),0px 0px 0px 0px var(--background-darkend)!important;
+    background-color: var(--elemLayer)!important;
+    margin-bottom: 12px;
 }
 #tags a {
     color: #fff!important;
@@ -304,34 +312,34 @@ div.sug-list a span {
 
 
 .niceButton {
-    color: #e3e3e3;
+    color: var(--onBG-elem);
     font-weight: 600;
     display: inline-block;
     padding-top: 5px;
     padding-bottom: 5px;
     width: 80px;
     border: 2px solid #d3d1d1;
-    background-color: #1717173d;
+    background-color: var(--background-element);
     border-radius: 30px;
     margin: 2px;
     margin-top: 5px;
     transition: 0.7s;
 }
 .niceButton:hover {
-    color: #bfbfbf;
+    color: var(--onBG-elem);
     font-weight: 600;
     display: inline-block;
     border: 2px solid #a2a2a2;
-    background-color: #040404;
-}
+    background-color: var(--elemLayer-accent)
+;}
 .niceButton:hover:active {
-    background-color: #505050;
+    background-color: var(--background-accent);
 }
 .deleted {
     background-color: #710612;
 }
 .copied {
-    background-color: #06710b;
+    background-color: #034106;
 }
 .deleted:hover {
     background-color: #410209;
@@ -347,19 +355,15 @@ div.sug-list a span {
 }
 .listDiv {
     padding: 10px;
-    background-color: #111;
+    background-color: var(--elemLayer);
     min-height: 50px;
-    width: 98%;
+    width: 99%;
     box-sizing: border-box;
     text-align: left;
     display: block;
     float: left;
-    border: 1px solid #00000061;
+    border: 1px solid var(--background-accent);
     margin: 5px 0px 5px 4px;
-    max-width: 100%;
-    min-width: 98%;
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,.1);
-    -moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,.1);
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,.1);
     position: relative;
     pointer-events: auto;
@@ -374,22 +378,25 @@ div.sug-list a span {
     display: inline-block;
 }
 .listBtn {
-    color: #777;
+    color: var(--onBG-elem);
     display: block;
 }
 .listDiv:not(customExpanded) h2{
-    background: #111 url(https://www.mtlnovel.net/themes/mtlnovel/images/chevron-down.svg) 2px 9px no-repeat;
+    background: var(--noColor) url(https://www.mtlnovel.net/themes/mtlnovel/images/chevron-down.svg) 2px 9px no-repeat;
     background-position: calc(100% - 10px);
 }
 .listDiv:not(customExpanded) span {
     display: none;
 }
 .listDiv.customExpanded h2 {
-    background: #111 url(https://www.mtlnovel.net/themes/mtlnovel/images/chevron-up.svg) 2px 9px no-repeat;
+    background: var(--noColor) url(https://www.mtlnovel.net/themes/mtlnovel/images/chevron-up.svg) 2px 9px no-repeat;
     background-position: calc(100% - 10px);
 }
 .listDiv.customExpanded span {
     display: inline-block;
+}
+.list-but-in,.list-but-in:visited {
+    color: var(--onBG-elem)!important;
 }
 .expandBtn {
     appearance: none;
@@ -399,7 +406,7 @@ div.sug-list a span {
     text-align: center;
     align-items: flex-start;
     cursor: pointer;
-    background-color: #111;
+    background-color: var(--noColor);
     min-height: 50px;
     box-sizing: border-box;
     text-align: left;
@@ -412,52 +419,47 @@ div.sug-list a span {
     position: relative;
     pointer-events: auto;
 }
-div button.emptyBtn {
+.emptyBtn, .rmvBtn {
     position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-weight: 600;
+    background-color: var(--noColor);
+    border-color: var(--noColor);
+    cursor: pointer;
+}
+.rmvBtn {
+    font-size: 16px;
     right: 10px;
     padding: 3px;
     margin: 3px;
-    width: 28px;
-    height: 28px;
-    background-color: #2705055e;
-    border-color: #1111113d;
-    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background-color: var(--elemLayer-accent);
+    border-radius: 12px;
+    box-shadow: 0px 0px 1px 1px var(--background-darkend);
 }
-span button.emptyBtn {
-    position: relative;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #29282800;
-    border-color: #1110;
-    cursor: pointer;
-}
-a button.emptyBtn {
-    position: relative;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #29282800;
-    border-color: #1110;
-    cursor: pointer;
-    pointer-events: initial;
+.rmvBtn:hover {
+    background-color: var(--background-accent);
+    transition: 0.2s;
 }
 .box.wide.customHighlight {
     border-color: #6d1212!important;
-    border: 2px solid #6d1212!important;
 }
 .customHighlight {
     border-color: #6d1212!important;
-    border: 2px solid #6d1212!important;
 }
 a.genre {
     pointer-events: none;
+    color: var(--onBG-elem)!important;
 }
 #inputCopyAmountLbl {
-    color: #e3e3e3;
+    color: var(--onBG-elem);
     font-weight: 600;
+    background-color: var(--background-element)!important;
     display: inline-block;
     padding: 5px 15px;
     border: 2px solid #d3d1d1;
@@ -597,4 +599,3 @@ a.genre {
 .settingContainer {
     display: block;
 }
-

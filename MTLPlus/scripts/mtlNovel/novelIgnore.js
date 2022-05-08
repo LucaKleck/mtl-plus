@@ -42,7 +42,7 @@ function createUiElements() {
         // Button to remove item from the list (ignoreList)
         let removeFromListBtn = document.createElement("button");
         removeFromListBtn.innerHTML = "&#10006;";
-        removeFromListBtn.className = "emptyBtn";
+        removeFromListBtn.className = "emptyBtn filterBtn";
         removeFromListBtn.onclick = function() {
             let elemGen = element;
             ignoreList.splice(ignoreList.indexOf(elemGen),1);
@@ -61,7 +61,7 @@ function createUiElements() {
             // Button to add item to the list (ignoreList)
             let addToListBtn = document.createElement("button");
             addToListBtn.innerHTML = "&#10006;";
-            addToListBtn.className = "emptyBtn";
+            addToListBtn.className = "rmvBtn";
             addToListBtn.onclick = function() {
                 let elemGen = getElemAttributeLable(aOrh3);
                 let newStorage = elemGen + "#" + window.localStorage.getItem("ignoreList");
