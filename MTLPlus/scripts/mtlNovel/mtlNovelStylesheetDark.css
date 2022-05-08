@@ -3,10 +3,10 @@
     --background-darkend: #0c0b0e;
     --background-element: #151318;
     --background-accent: #231f27;
-    --elemLayer: #222027;
+    --elemLayer: #1f1e24;
     --elemLayer-accent: #312e38;
     --onBG-elem: #c7c1ce;
-    --secondary-main: #025a6c;
+    --secondary-main: #045b62;
     --colorLink: #e295a2;
     --colorLinkVisited: #a87b8c;
     --noColor: #0000;
@@ -18,10 +18,10 @@ div {
     color: var(--onBG-elem)!important;
 }
 .list-title {
-    color: #9e9e9e!important;
+    color: var(--colorLink)!important;
 }
 .list-title:visited {
-    color: #f7f7f7!important;
+    color: var(--onBG-elem)!important;
 }
 .warning {
     display: none;
@@ -31,6 +31,9 @@ a {
 }
 a:visited {
     color: var(--colorLinkVisited)!important;
+}
+.list-a amp-img, .status.ongoing, .ch {
+    border-radius: 5px;
 }
 #toolbar a:hover {
     background-color: #000!important;
@@ -292,7 +295,7 @@ div.sug-list a span {
 .box.wide {
     padding: 12px!important;
     border-radius: 12px!important;
-    box-shadow: 1px 1px 1px 1px var(--background-darkend),0px 0px 0px 0px var(--background-darkend)!important;
+    box-shadow: 2px 2px 0px 0px var(--background-darkend),0px 0px 0px 0px var(--background-darkend)!important;
     background-color: var(--elemLayer)!important;
     margin-bottom: 12px;
 }
@@ -445,6 +448,11 @@ div.sug-list a span {
 .rmvBtn:hover {
     background-color: var(--background-accent);
     transition: 0.2s;
+}
+.filterBtn, .addHighlightBtn {
+    pointer-events: auto;
+    margin-left: 3px;
+    padding: 0px;
 }
 .box.wide.customHighlight {
     border-color: #6d1212!important;
