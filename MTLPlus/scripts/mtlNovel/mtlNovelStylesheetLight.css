@@ -182,6 +182,11 @@
     background-color: var(--background-accent);
     transition: 0.2s;
 }
+.filterBtn, .addHighlightBtn {
+    pointer-events: auto;
+    margin-left: 3px;
+    padding: 0px;
+}
 .box.wide.customHighlight {
     border-color: #6d1212!important;
     border: 2px solid #6d1212!important;
