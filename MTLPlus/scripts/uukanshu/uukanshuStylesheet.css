@@ -158,6 +158,28 @@ td.gsc-search-button * {
 .tjxslb {
     display: block!important;
     font-weight: 600!important;
+    height: 470px!important;
+}
+.tjxslb li {
+    display: block!important;
+    background-color: var(--background-element)!important;
+    height: 225px!important;
+    padding: 10px!important;
+    border-radius: 12px!important;
+    width: 105px!important;
+    margin: 3px!important;
+    overflow-y: hidden!important;
+}
+.tjxslb li a img {
+    border-radius: 6px!important;
+    transform: none!important;
+}
+.tjxslb li:hover, .tjxslb li a:hover {
+    background-color: var(--elemLayer-accent)!important;
+}
+.tjxslb li a:hover img {
+    width: 98px!important;
+    height: 142px!important;
 }
 #right {
     font-weight: 600!important;
@@ -196,7 +218,7 @@ a.gs-title {
 }
 #chapterList > li a {
     padding: 100%;
-    padding-left: 3px;
+    padding-left: 2px!important;
 }
 #chapterList > li a:hover {
     text-decoration: none;
@@ -364,7 +386,7 @@ span.author *{
     white-space: nowrap!important;
     z-index: 9!important;
     position: absolute!important;
-    top:150px!important;
+    top:132px!important;
     left: 0px!important;
     width: 100%!important;
     color: var(--secondary-accent)!important;
@@ -473,7 +495,7 @@ div[style="margin:0px;"] {
 #copyAmountLbl {
     background-color: var(--noColor)!important;
 }
-#inputCopyAmountLbl {
+#inputCopyAmount {
     background-color: var(--background-element)!important;
     color: var(--textOnElem)!important;
     margin: 10px!important;
@@ -482,7 +504,7 @@ div[style="margin:0px;"] {
     border-radius: 30px!important;
     font-size: 1em!important;
 }
-#inputCopyAmountLbl {
+#inputCopyAmount {
     color: var(--textOnElem)!important;
     font-weight: 600!important;
     display: inline-block!important;
@@ -494,7 +516,7 @@ div[style="margin:0px;"] {
     transition: 0.7s!important;
     width: 120px!important;
 }
-#inputCopyAmountLbl::-webkit-inner-spin-button, #inputCopyAmountLbl::-webkit-outer-spin-button {
+#inputCopyAmount::-webkit-inner-spin-button, #inputCopyAmount::-webkit-outer-spin-button {
     -webkit-appearance: none!important;
     background: var(--background-brightAccent)    url(data:image/png!important;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=)     no-repeat center center!important;
     position: absolute!important;

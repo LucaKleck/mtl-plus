@@ -1,10 +1,13 @@
 :root {
     --background-surface: #201e22;
     --background-darkend: #0c0b0e;
+    --background-shadow: #15111f;
     --background-element: #151318;
     --background-accent: #231f27;
+    --background-accent-transparent: #231f2750;
     --background-brightAccent: #e5d6ee;
     --elemLayer: #1f1e24;
+    --elemLayer-transparent: #1f1e2450;
     --elemLayer-accent: #312e38;
     --textOnElem: #d4c8e0;
     --textOnElemGrey:#8a8294e;
@@ -12,8 +15,9 @@
     --secondary-accent: #3d8086;
     --secondary-elem: #0d484e;
     --secondary-dark: #02393e;
-    --colorLink: #faa2b1;
-    --colorLinkVisited: #e2397a;
+    --colorLink: #fad7a2;
+    --colorLinkHover: #c48040;
+    --colorLinkVisited: #e27739;
     --noColor: #0000;
 }
 body {
@@ -199,6 +203,7 @@ header s-input {
     color: var(--textOnElem)!important;
     border-bottom: 1px solid #000!important;
     padding-bottom: 5px!important;
+    min-height: 67.5px!important;
 }
 select {
     color:var(--textOnElem)!important;
@@ -246,18 +251,18 @@ ul.cat-list li a {
     overflow: visible!important;
     text-overflow: ellipsis!important;
     padding: 4px 4px 4px 4px!important;
-    background: #080808!important;
+    background: var(--elemLayer)!important;
     border-radius: 1px!important;
-    border: 1px solid #1e1e1e!important;
-    color: #007ead!important;
+    border: 1px solid var(--elemLayer-accent)!important;
+    color: var(--colorLink)!important;
     -webkit-transition: all .35s ease!important;
     -o-transition: all .35s ease!important;
     transition: all .35s ease!important;
 }
 ul.cat-list li a:hover {
-    color: #007ead!important;
-    background-color: #222!important;
-    border: 1px solid #007ead!important;
+    color: var(--colorLinkHover)!important;
+    background-color: var(--elemLayer-accent)!important;
+    border: 1px solid var(--background-darkend)!important;
     -webkit-transition: all .35s ease!important;
     -o-transition: all .35s ease!important;
     transition: all .35s ease!important;
@@ -294,6 +299,19 @@ amp-accordion section[expanded] h2, amp-accordion section[expanded] h3 {
 .box.rank-box {
     background-color: var(--background-darkend);
 }
+.box.read-box {
+    background-color: var(--elemLayer)!important;
+}
+.box {
+    border: 1px solid var(--background-element)!important;
+    border-radius: 4px!important;
+    box-shadow: 2px 2px 4px 3px var(--background-shadow)!important;
+    -webkit-box-shadow: 2px 2px 4px 3px var(--background-shadow)!important;
+    background-color: var(--elemLayer)!important;
+}
+.box:hover{
+    background-color: var(--elemLayer-accent)!important;
+}
 #pagination {
     height: fit-content!important;
 }
@@ -305,15 +323,17 @@ amp-accordion section[expanded] h2, amp-accordion section[expanded] h3 {
     height: 24px!important;
     line-height: 24px!important;
     border-radius: 24px!important;
+    user-select: none;
 }
 #pagination span {
     background-color: var(--secondary-dark)!important;
+    user-select: none;
 }
-#pagination a:last-child {
-    width: fit-content!important;
+#pagination a:last-child, #pagination span:last-child {
+    width: 42px!important;
 }
 #pagination a:first-child, #pagination span:first-child {
-    width: fit-content!important;
+    width: 42px!important;
 }
 #pagination a:hover {
     background-color: var(--secondary-accent)!important;
@@ -330,13 +350,7 @@ amp-accordion section[expanded] h2, amp-accordion section[expanded] h3 {
     margin: 24px 0!important;
 }
 tr.odd, li.odd, p.odd, a.odd {
-    background: #222!important;
-}
-.box {
-    border: 1px solid var(--background-element)!important;
-}
-.box:hover{
-    background-color: var(--background-accent)!important;
+    background: var(--background-accent)!important;
 }
 .site-footer ,.site-footer *{
     padding-top: 1.5em!important;
@@ -351,13 +365,13 @@ tr.odd, li.odd, p.odd, a.odd {
     background-color: var(--background-element)!important;
 }
 .ch-link:hover strong{
-    color: #007ead!important;
+    color: var(--colorLink)!important;
 }
 div a:visited strong {
-    color:#163f66!important;
+    color:var(--colorLinkVisited)!important;
 }
 #currentgen {
-    background-color: var(--background-element)!important;
+    background-color: var(--noColor)!important;
 }
 #comment {
     color: var(--textOnElem)!important;
@@ -383,16 +397,19 @@ div.sug-list a span {
     border-radius: 12px!important;
     box-shadow: 2px 2px 0px 0px var(--background-darkend),0px 0px 0px 0px var(--background-darkend)!important;
     background-color: var(--elemLayer)!important;
-    margin-bottom: 12px;
+    margin-bottom: 12px!important;
 }
-#tags a {
-    color: #fff!important;
-    background: #444!important;
+#tags a, .tags a {
+    color: var(--textOnElem)!important;
+    background: var(--secondary-main)!important;
     border-radius: 3px!important;
     font-size: 12px!important;
     padding: 3px 5px 3px 5px!important;
     margin: 3px 3px 3px 3px!important;
     display: inline-block!important;
+}
+#tags a:hover, .tags a:hover  {
+    background-color: var(--secondary-elem)!important;
 }
 .comment:nth-child(2n) * {
     background-color: var(--background-accent)!important;
@@ -580,7 +597,7 @@ a.genre, a.genre:hover {
 a.genre:hover {
     background-color: var(--secondary-main)!important;
 }
-#inputCopyAmountLbl {
+#inputCopyAmount {
     color: var(--textOnElem);
     font-weight: 600;
     background-color: var(--background-element)!important;
@@ -602,7 +619,7 @@ a.genre:hover {
 .copyright *:hover {
     color: var(--colorLinkVisited)!important;
 }
-#inputCopyAmountLbl::-webkit-inner-spin-button, #inputCopyAmountLbl::-webkit-outer-spin-button {
+#inputCopyAmount::-webkit-inner-spin-button, #inputCopyAmount::-webkit-outer-spin-button {
     -webkit-appearance: none;
     background: #fff    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=)     no-repeat center center;
     position: absolute;
@@ -612,6 +629,12 @@ a.genre:hover {
     width: 1em;
     border-left: 1px solid #bbb;
     opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
+}
+#copyAmountLbl {
+    font-variant-caps: all-small-caps!important;
+}
+#storageTextLengthCounterLbl {
+    font-variant-caps: all-small-caps!important;
 }
 
 /* The switch - the box around the slider */

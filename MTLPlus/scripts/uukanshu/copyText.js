@@ -85,11 +85,11 @@ function copy(isNested) {
             console.warn("Could not select text in node: Unsupported browser.");
         }
         */
-        if (window.localStorage.getItem("copyAmount") > 0) {
-            setCopyAmount((parseInt(window.localStorage.getItem("copyAmount")) - 1));
-            nextChapter();
-        }
-        document.getElementById("storageTextLengthCounterLbl").textContent = (window.localStorage.getItem("textContent").length * 8 / 8000000) + " MB";
+       if (window.localStorage.getItem("copyAmount") > 0) {
+           setCopyAmount((parseInt(window.localStorage.getItem("copyAmount")) - 1));
+           nextChapter();
+       }
+        document.getElementById("storageTextLengthCounterLbl").textContent = (window.localStorage.getItem("textContent").length * 8 / 8000000) + " MB ["+storedText.split(' ').length+" words]";
     }
 }
 /**
@@ -189,7 +189,7 @@ function createUI() {
         window.localStorage.setItem("textContent", "");
         document.getElementById("clearStorageBtn").innerHTML = "Cleared";
         document.getElementById("clearStorageBtn").className = "deleted niceButton";
-        document.getElementById("storageTextLengthCounterLbl").innerHTML = "0 MB";
+        document.getElementById("storageTextLengthCounterLbl").innerHTML = "0 MB [0 words]";
     }
 
     let copyStorageBtn = document.createElement("button");
@@ -203,10 +203,10 @@ function createUI() {
         document.getElementById("copyStorageBtn").className = "copied niceButton";
     }
 
-    let inputCopyAmountLbl = document.createElement("input");
-    inputCopyAmountLbl.type = "number";
-    inputCopyAmountLbl.id = "inputCopyAmountLbl";
-    inputCopyAmountLbl.value = 20;
+    let inputCopyAmount = document.createElement("input");
+    inputCopyAmount.type = "number";
+    inputCopyAmount.id = "inputCopyAmount";
+    inputCopyAmount.value = 20;
     // copyX
     let copyInputAmountBtn = document.createElement("button");
     copyInputAmountBtn.innerHTML = "Copy x";
@@ -214,7 +214,7 @@ function createUI() {
     copyInputAmountBtn.className = "niceButton";
 
     copyInputAmountBtn.onclick = function () {
-        let amount = parseInt(window.localStorage.getItem("copyAmount")) + parseInt(document.getElementById("inputCopyAmountLbl").value - 1);
+        let amount = parseInt(window.localStorage.getItem("copyAmount")) + parseInt(document.getElementById("inputCopyAmount").value - 1);
         setCopyAmount(amount);
         nextChapter();
     }
@@ -237,7 +237,7 @@ function createUI() {
     let storageTextLengthCounterLbl = document.createElement("h5");
     storageTextLengthCounterLbl.id = "storageTextLengthCounterLbl";
     if (window.localStorage.getItem("textContent") != null) {
-        storageTextLengthCounterLbl.innerHTML = (window.localStorage.getItem("textContent").length * 8 / 8000000) + " MB";
+        storageTextLengthCounterLbl.innerHTML = (window.localStorage.getItem("textContent").length * 8 / 8000000) + " MB ["+window.localStorage.getItem("textContent").split(' ').length+" words]";
     }
 
     let copyDiv = document.createElement("div");
@@ -246,7 +246,7 @@ function createUI() {
     copyDiv.appendChild(copyStorageBtn);
     copyDiv.appendChild(clearStorageBtn);
     copyDiv.appendChild(storageTextLengthCounterLbl);
-    copyDiv.appendChild(inputCopyAmountLbl);
+    copyDiv.appendChild(inputCopyAmount);
     copyDiv.appendChild(copyInputAmountBtn);
     copyDiv.appendChild(clearCopyBtn);
     copyDiv.appendChild(copyAmountLbl);
