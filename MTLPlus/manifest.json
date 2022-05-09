@@ -9,8 +9,12 @@
   },
   "web_accessible_resources": [
     {
-      "resources": [ "scripts/mtlNovel/mtlNovelStylesheetDark.css", "scripts/mtlNovel/mtlNovelStylesheetLight.css", "images/transparentBG.png" ],
+      "resources": [ "scripts/mtlNovel/mtlNovelStylesheetDark.css", "scripts/mtlNovel/mtlNovelStylesheetLight.css" ],
       "matches": [ "https://*.mtlnovel.com/*" ]
+    },
+    {
+      "resources": [ "scripts/uukanshu/uukanshuStylesheet.css" ],
+      "matches": [ "https://*.uukanshu.com/*" ]
     }
   ],
   "content_scripts": [
@@ -40,7 +44,6 @@
     {
       "run_at": "document_start",
       "matches": ["https://www.uukanshu.com/*"],
-      "css": ["scripts/uukanshu/uukanshuStylesheet.css"],
       "js": ["scripts/uukanshu/uukanshuFunctions.js"]
     },
     {

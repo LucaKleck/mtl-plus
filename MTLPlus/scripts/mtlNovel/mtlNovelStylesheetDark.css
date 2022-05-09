@@ -312,6 +312,9 @@ amp-accordion section[expanded] h2, amp-accordion section[expanded] h3 {
 #pagination a:last-child {
     width: fit-content!important;
 }
+#pagination a:first-child, #pagination span:first-child {
+    width: fit-content!important;
+}
 #pagination a:hover {
     background-color: var(--secondary-accent)!important;
 }
@@ -590,6 +593,15 @@ a.genre:hover {
     transition: 0.7s;
     width: 120px;
 }
+.copyright *, .copyright *:visited {
+    color: var(--background-brightAccent)!important;
+    height: fit-content!important;
+    padding: 3px!important;
+    user-select: none;
+}
+.copyright *:hover {
+    color: var(--colorLinkVisited)!important;
+}
 #inputCopyAmountLbl::-webkit-inner-spin-button, #inputCopyAmountLbl::-webkit-outer-spin-button {
     -webkit-appearance: none;
     background: #fff    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=)     no-repeat center center;
@@ -744,6 +756,9 @@ a.genre:hover {
     color: var(--textOnElem)!important;
     background-color: var(--secondary-main)!important;
 }
+a.small-btn:hover {
+    background-color: var(--secondary-accent)!important;
+}
 a.recent-novels:hover {
     background-color: var(--secondary-elem)!important;
 }
@@ -755,8 +770,4 @@ a.recent-novels:hover {
 }
 .data-r p {
     min-height: 110px;
-}
-
-.ads {
-    display: none;
 }
