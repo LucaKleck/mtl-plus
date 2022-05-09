@@ -4,6 +4,10 @@ const filterList = [
 
 
 var regex = new RegExp('.*[a-zA-Z].*', 'i');
+if(window.localStorage.getItem("enableScrolling") == null) {
+    window.localStorage.setItem("enableScrolling", "true");
+} 
+var enableScrolling = window.localStorage.getItem("enableScrolling");
 createStorage();
 checkCopyCondition();
 createUI();
@@ -25,11 +29,13 @@ function checkCopyCondition() {
             if(document.getElementById("contentbox").querySelector(".ad_content") != null && document.getElementById("contentbox").querySelector(".ad_content").nextSibling.nodeType == 1 && document.getElementById("contentbox").querySelector(".ad_content").nextSibling.nodeName == "FONT") {
                 window.setTimeout(copy(false), 200);
             } else {
-                window.scrollTo({
-                    top: document.body.scrollHeight,
-                    left: 0,
-                    behavior: 'smooth'
-                });
+                if(enableScrolling == "true") {
+                    window.scrollTo({
+                        top: document.body.scrollHeight,
+                        left: 0,
+                        behavior: 'smooth'
+                    });
+                }
                 window.setTimeout(checkCopyCondition, 1000);
                 return;
             }
@@ -63,7 +69,7 @@ function copy(isNested) {
             storedText += chapter;
             window.localStorage.setItem("textContent", storedText);
         }
-
+        /*
         // mark selected
         if (document.body.createTextRange) {
             const range = document.body.createTextRange();
@@ -78,12 +84,12 @@ function copy(isNested) {
         } else {
             console.warn("Could not select text in node: Unsupported browser.");
         }
-
+        */
         if (window.localStorage.getItem("copyAmount") > 0) {
             setCopyAmount((parseInt(window.localStorage.getItem("copyAmount")) - 1));
             nextChapter();
         }
-        document.getElementById("storageTextLengthCounterLbl").innerHTML = (window.localStorage.getItem("textContent").length * 8 / 8000000) + " MB";
+        document.getElementById("storageTextLengthCounterLbl").textContent = (window.localStorage.getItem("textContent").length * 8 / 8000000) + " MB";
     }
 }
 /**
@@ -92,15 +98,15 @@ function copy(isNested) {
 function copyNodesToText(nodes) {
     let paragraph = "";
     nodes.forEach(contentBoxElement => {
-        if (contentBoxElement.innerHTML != undefined && (contentBoxElement.nodeType == 1 && contentBoxElement.nodeName == "FONT")) {
+        if (contentBoxElement.textContent != undefined && (contentBoxElement.nodeType == 1 && contentBoxElement.nodeName == "FONT")) {
             if (
                 contentBoxElement.firstChild == null
-                ||(contentBoxElement.firstChild.innerHTML.includes("You can search for ") && contentBoxElement.firstChild.innerHTML.includes("in Baidu to find the latest chapters"))
-                || contentBoxElement.firstChild.innerHTML == "　　"
-                || !contentBoxElement.firstChild.innerHTML.match(regex)
-                || checkFilterList(contentBoxElement.firstChild.innerHTML)
+                ||(contentBoxElement.textContent.includes("You can search for ") && contentBoxElement.textContent.includes("in Baidu to find the latest chapters"))
+                || contentBoxElement.textContent == "　　"
+                || !contentBoxElement.textContent.match(regex)
+                || checkFilterList(contentBoxElement.textContent)
             ) {/*Dont add to text*/ } else {
-                paragraph = paragraph + contentBoxElement.firstChild.innerHTML + "\n\n";
+                paragraph = paragraph + contentBoxElement.textContent + "\n\n";
             }
         }
 
@@ -114,14 +120,14 @@ function copyNodesToTextNested(nodes) {
     let paragraph = "";
     nodes.forEach(contentBoxElement => {
         if (contentBoxElement.firstChild != null && contentBoxElement.firstChild.firstChild != null) {
-            if (contentBoxElement.firstChild.firstChild.innerHTML != undefined && (contentBoxElement.nodeName == "P")) {
+            if (contentBoxElement.textContent != undefined && (contentBoxElement.nodeName == "P")) {
                 if (
-                    (contentBoxElement.firstChild.firstChild.innerHTML.includes("You can search for ") && contentBoxElement.firstChild.firstChild.innerHTML.includes("in Baidu to find the latest chapters"))
-                    || contentBoxElement.firstChild.firstChild.innerHTML == "　　"
-                    || !contentBoxElement.firstChild.firstChild.innerHTML.match(regex)
-                    || checkFilterList(contentBoxElement.firstChild.firstChild.innerHTML)
+                    (contentBoxElement.textContent.includes("You can search for ") && contentBoxElement.textContent.includes("in Baidu to find the latest chapters"))
+                    || contentBoxElement.textContent == "　　"
+                    || !contentBoxElement.textContent.match(regex)
+                    || checkFilterList(contentBoxElement.textContent)
                 ) {/*Dont add to text*/ } else {
-                    paragraph = paragraph + contentBoxElement.firstChild.firstChild.innerHTML + "\n\n";
+                    paragraph = paragraph + contentBoxElement.textContent + "\n\n";
                 }
             }
         }
@@ -155,6 +161,24 @@ function checkFilterList(toFilter) {
 function createUI() {
     let insertPosition = document.getElementsByClassName("readset")[0];
     if(insertPosition == undefined) return;
+    let scrollingCheckbox = document.createElement("input");
+    scrollingCheckbox.type = "checkbox";
+    if(enableScrolling == "true") {
+        scrollingCheckbox.checked = true
+    } else {
+        scrollingCheckbox.checked = false;
+    }
+    scrollingCheckbox.onclick = function() {
+        if(enableScrolling == "true") {
+            enableScrolling = "false";
+        } else {
+            enableScrolling = "true";
+        }
+        window.localStorage.setItem("enableScrolling", enableScrolling);
+    }
+    let scrollingCheckboxLbl = document.createElement("lable");
+    scrollingCheckboxLbl.textContent = "Enable Scrolling";
+    scrollingCheckboxLbl.setAttribute("style","margin-left: 3px");
     // Copy current local storage
     let clearStorageBtn = document.createElement("button");
     clearStorageBtn.innerHTML = "Clear";
@@ -226,6 +250,8 @@ function createUI() {
     copyDiv.appendChild(copyInputAmountBtn);
     copyDiv.appendChild(clearCopyBtn);
     copyDiv.appendChild(copyAmountLbl);
+    copyDiv.appendChild(scrollingCheckbox);
+    copyDiv.appendChild(scrollingCheckboxLbl);
 
     insertPosition.appendChild(copyDiv);
 }

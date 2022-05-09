@@ -1,10 +1,10 @@
 createStorageIfNull();
-copyText();
 createUI();
+copyText();
 
 function createStorageIfNull() {
 	// create copy amount if null
-	if(window.localStorage.getItem("copyAmount") == null) {
+	if(window.localStorage.getItem("copyAmount") == null || window.localStorage.getItem("copyAmount") == "NaN") {
 		window.localStorage.setItem("copyAmount",0);
 	}
 	if(window.localStorage.getItem("textContent") == null) {
@@ -19,14 +19,14 @@ function copyText() {
 		let text = "";
 		let regex = new RegExp('.*[a-zA-Z].*', 'i');
 		elements.forEach(element => {
-			if (element.innerHTML != undefined && (element.nodeName == "P" || element.nodeName == "#text")) {
+			if (element.textContent != undefined && (element.nodeName == "P" || element.nodeName == "#text")) {
 				if(
-					(element.innerHTML.includes("You can search for ") && element.innerHTML.includes("in Baidu to find the latest chapters"))
-				||  element.innerHTML == "　　"
-				||  !element.innerHTML.match(regex)
-				||  checkFilterList(element.innerHTML)
+					(element.textContent.includes("You can search for ") && element.textContent.includes("in Baidu to find the latest chapters"))
+				||  element.textContent == "　　"
+				||  !element.textContent.match(regex)
+				||  checkFilterList(element.textContent)
 				) {/*Dont add to text*/} else {
-					text = text + element.innerHTML + "\n\n";
+					text = text + element.textContent + "\n\n";
 				}
 			}
 		});
@@ -42,7 +42,7 @@ function copyText() {
 			storedText += text;
 			lStorage.setItem("textContent",storedText);
 		}
-		/* Disabled unti option is created
+		/* Disabled until option is created
 		// mark selected
 		if (document.body.createTextRange) {
 			const range = document.body.createTextRange();
@@ -143,9 +143,18 @@ function createUI() {
 	}
 }
 
+function setCopyAmount(amount) {
+	window.localStorage.setItem("copyAmount",parseInt(amount));
+}
+
 function nextChapter() {
 	let navElement = document.getElementsByClassName("next")[0];
-	navElement.click();
+	if(navElement.getAttribute('href')==null) {
+		setCopyAmount(0);
+		document.getElementById("copyAmountLbl").innerHTML = "0 to copy";
+	} else {
+		navElement.click();
+	}
 }
 /**
  * @param {String} toFilter

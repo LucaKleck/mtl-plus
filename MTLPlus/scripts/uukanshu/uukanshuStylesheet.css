@@ -269,7 +269,7 @@ span.author *{
     border-bottom: 5px!important;
 }
 /*bottom*/
-div[style="margin:0px!important;"] {
+div[style="margin:0px;"] {
     display: none!important;
 }
 .fanye_cen {
