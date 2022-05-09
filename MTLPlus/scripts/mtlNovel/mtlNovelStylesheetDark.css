@@ -66,6 +66,15 @@ a:visited {
 #sidebar {
     background-color: var(--background-surface)!important;
 }
+.wrap * {
+    background-color: var(--secondary-main)!important;
+}
+.but {
+    background-color: var(--secondary-elem)!important;
+}
+.but:hover {
+    background-color: var(--secondary-accent)!important;
+}
 .lang-btn {
     user-select: none!important;
 }
