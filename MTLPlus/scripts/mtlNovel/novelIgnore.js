@@ -47,6 +47,9 @@ function createUiElements() {
             let elemGen = element;
             ignoreList.splice(ignoreList.indexOf(elemGen),1);
             window.localStorage.setItem("ignoreList",ignoreList.join("#"));
+            if(ignoreList.includes('')) ignoreList.splice(ignoreList.indexOf(''),1);
+            window.localStorage.setItem("ignoreList",ignoreList.join("#"));
+            
             this.parentElement.style="display:none";
         }
         genreEle.appendChild(removeFromListBtn);

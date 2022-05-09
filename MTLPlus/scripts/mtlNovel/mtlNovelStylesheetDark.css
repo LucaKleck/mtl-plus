@@ -285,6 +285,27 @@ amp-accordion section[expanded] h2, amp-accordion section[expanded] h3 {
 .box.rank-box {
     background-color: var(--background-darkend);
 }
+#pagination {
+    height: fit-content!important;
+}
+#pagination span, #pagination a {
+    background-color: var(--secondary-elem)!important;
+    border-color: var(--secondary-accent)!important;
+    width: 24px!important;
+    text-align: center!important;
+    height: 24px!important;
+    line-height: 24px!important;
+    border-radius: 24px!important;
+}
+#pagination span {
+    background-color: var(--secondary-dark)!important;
+}
+#pagination a:last-child {
+    width: fit-content!important;
+}
+#pagination a:hover {
+    background-color: var(--secondary-accent)!important;
+}
 .m-card {
     position: relative!important;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.123),0px 0px 0px 0px rgba(0, 0, 0, 0.274)!important;
@@ -443,6 +464,9 @@ div.sug-list a span {
     margin: 3px 3px 3px 3px;
     display: inline-block;
 }
+.listElement:hover {
+    background-color: var(--secondary-accent);
+}
 .listBtn {
     color: var(--textOnElem);
     display: block;
@@ -452,6 +476,7 @@ div.sug-list a span {
     background-position: calc(100% - 10px);
 }
 .listDiv:not(customExpanded) span {
+    transition: 0.4s;
     display: none;
 }
 .listDiv.customExpanded h2 {
@@ -536,10 +561,12 @@ div.sug-list a span {
     border-top: 1px var(--colorLinkVisited) solid!important;
 }
 a.genre, a.genre:hover {
-    pointer-events: none;
     text-decoration: none!important;
     background-color: var(--secondary-elem)!important;
     color: var(--textOnElem)!important;
+}
+a.genre:hover {
+    background-color: var(--secondary-main)!important;
 }
 #inputCopyAmountLbl {
     color: var(--textOnElem);

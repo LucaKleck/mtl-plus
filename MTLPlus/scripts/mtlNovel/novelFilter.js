@@ -58,7 +58,7 @@ function createUiElements() {
     setTimeout(() => {
         let genreElements = document.getElementsByClassName("genre");
         Array.from(genreElements).forEach(genreTag => {
-            genreTag.href = ".";
+            genreTag.href = "";
             // Button to add item to the list (filterList)
             let addToListBtn = document.createElement("button");
             addToListBtn.innerHTML = "&#10006;";

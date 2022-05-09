@@ -1,6 +1,7 @@
 createHighlightList();
 // create highlight var
 var highlightList = window.localStorage.getItem("highlightList").split(','); // creates String array
+
 if(enableNovelHighlight) createUiElements();
 
 function createHighlightList() {
@@ -55,7 +56,7 @@ function createUiElements() {
         let genreElements = document.getElementsByClassName("genre");
         // for each genre tag
         Array.from(genreElements).forEach(element => {
-            element.href = ".";
+            element.href = "";
             // Button to add item to the list (highlightList)
             let addToListBtn = document.createElement("button");
             addToListBtn.innerHTML = "✚";
@@ -80,6 +81,13 @@ function createUiElements() {
                 xmlr.onreadystatechange = function() {
                     if (this.readyState == 4 && this.response != null) {
                         let tags = this.response.getElementById("tags").children;
+                        for (let tag of tags) {
+                            if(highlightItems(tag)) {
+                                link.parentElement.parentElement.className=link.parentElement.parentElement.className+" customHighlight";
+                                break;
+                            }
+                        }
+                        tags = link.parentElement.parentElement.getElementsByClassName("genre");
                         for (let tag of tags) {
                             if(highlightItems(tag)) {
                                 link.parentElement.parentElement.className=link.parentElement.parentElement.className+" customHighlight";
