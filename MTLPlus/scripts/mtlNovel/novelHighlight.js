@@ -75,7 +75,7 @@ function createUiElements() {
         for(let link of listTitle) {
             var xmlr = new XMLHttpRequest();
             xmlr.responseType = "document";
-            if(link.href != null){
+            if(link.href != null) {
                 xmlr.open("GET",link.href,true);
                 xmlr.send();
                 xmlr.onreadystatechange = function() {

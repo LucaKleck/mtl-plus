@@ -1,4 +1,6 @@
 // check for some functions you could make global
+const numberRegex = new RegExp(' \([0-9]+\.[0-9]+%\)', 'i');
+const numberRegex2 = new RegExp('Progress\: [0-9]+\/', 'i');
 const textFilterList = [	
 	"Genius remembers this site address in one second:",
 	"In order to facilitate the next reading, you can click",

@@ -86,6 +86,11 @@ a:visited {
     user-select: none!important;
     background-color: var(--background-surface)!important;
 }
+#search input[type="search" i] , #search ,.back {
+    background: var(--secondary-main)!important;
+    color: var(--textOnElem)!important;
+    border-color: var(--secondary-accent)!important;
+}
 .prev {
     color: var(--textOnElem)!important;
     display: inline-block!important;
