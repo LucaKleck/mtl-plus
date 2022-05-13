@@ -575,6 +575,9 @@ div.sug-list a span {
     user-select: none;
     transition: 0.2s;
 }
+.readingTimeLbl {
+    color: var(--secondary-accent);
+}
 .filterBtn, .addHighlightBtn {
     pointer-events: auto;
     user-select: none;
@@ -602,6 +605,35 @@ a.genre, a.genre:hover {
 a.genre:hover {
     background-color: var(--secondary-main)!important;
 }
+.settingContainer {
+    vertical-align: middle!important;
+}
+#inputWPMNumber {
+    color: var(--textOnElem);
+    font-weight: 600;
+    background-color: var(--background-element)!important;
+    display: inline-block;
+    padding: 5px 18px;
+    border: 2px solid #d3d1d1;
+    background-color: #1717173d;
+    border-radius: 30px;
+    margin: 2px;
+    transition: 0.7s;
+    width: 120px;
+    max-height: 36px;
+    vertical-align: middle;
+}
+#inputWPMNumber::-webkit-inner-spin-button, #inputWPMNumber::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    background: #fff    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=)     no-repeat center center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1em;
+    border-left: 1px solid #bbb;
+    opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
+}
 #inputCopyAmount {
     color: var(--textOnElem);
     font-weight: 600;
@@ -615,15 +647,6 @@ a.genre:hover {
     transition: 0.7s;
     width: 120px;
 }
-.copyright *, .copyright *:visited {
-    color: var(--background-brightAccent)!important;
-    height: fit-content!important;
-    padding: 3px!important;
-    user-select: none;
-}
-.copyright *:hover {
-    color: var(--colorLinkVisited)!important;
-}
 #inputCopyAmount::-webkit-inner-spin-button, #inputCopyAmount::-webkit-outer-spin-button {
     -webkit-appearance: none;
     background: #fff    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=)     no-repeat center center;
@@ -634,6 +657,15 @@ a.genre:hover {
     width: 1em;
     border-left: 1px solid #bbb;
     opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
+}
+.copyright *, .copyright *:visited {
+    color: var(--background-brightAccent)!important;
+    height: fit-content!important;
+    padding: 3px!important;
+    user-select: none;
+}
+.copyright *:hover {
+    color: var(--colorLinkVisited)!important;
 }
 #copyAmountLbl {
     font-variant-caps: all-small-caps!important;
@@ -748,10 +780,8 @@ a.genre:hover {
     opacity: 1;
 }
 
-.textForToggle {
-    height: 36px;
+.textForSetting {
     display: inline-block;
-    vertical-align: middle;
     font-weight: 600;
     margin-left: 12px;
     margin-right: 3px;

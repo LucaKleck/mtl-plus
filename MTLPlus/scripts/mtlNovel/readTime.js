@@ -1,6 +1,6 @@
 if(document.location.href.includes("www.mtlnovel.com/library")) {
     for(let element of document.getElementsByClassName("box read-box")) {
-        //addEstematedReadingTimeLableBoxRead(element);
+        addEstematedReadingTimeLableBoxRead(element);
     }
 } else {
     for(let element of document.getElementsByClassName("box wide")) {
@@ -14,8 +14,10 @@ if(document.location.href.includes("www.mtlnovel.com/library")) {
  function addEstematedReadingTimeLableBoxRead(boxElement) {
 	let lable = document.createElement("lable");
 	lable.setAttribute("class","readingTimeLbl");
-    let chapters = parseInt(boxElement.getElementsByTagName("small")[0].textContent.replaceAll(numberRegex,"").replaceAll(numberRegex2,""));
-    console.log(chapters);
+
+	let chaptersRead = parseInt(boxElement.getElementsByTagName("small")[0].textContent.replaceAll(getCurrentChapter1,"").replaceAll(getCurrentChapter2,""));
+    let chaptersLeft = parseInt(boxElement.getElementsByTagName("small")[0].textContent.replaceAll(getTotalChapters1,"").replaceAll(getTotalChapters2,"")) - chaptersRead;
+
 	boxElement.appendChild(lable);
 	lable.textContent = "loading read time...";
     let xmlr2 = new XMLHttpRequest();
@@ -35,7 +37,7 @@ if(document.location.href.includes("www.mtlnovel.com/library")) {
                 if(length < 700) {
                     length = 1250;
                 }
-                lable.textContent = ("~"+Math.ceil(length*chapters/225/60)+" hours to read");
+                lable.textContent = ("~"+Math.ceil(length*chaptersLeft/wpmReadingSpeed/60)+" hours to read");
             }
         }
     }
@@ -80,7 +82,7 @@ function setReadingTime(chapterLink, lable) {
 							if(length < 700) {
 								length = 1250;
 							}
-							lable.textContent = ("~"+Math.ceil(length*chapters/225/60)+" hours to read");
+							lable.textContent = ("~"+Math.ceil(length*chapters/wpmReadingSpeed/60)+" hours to read");
 						}
 					}
 				}		

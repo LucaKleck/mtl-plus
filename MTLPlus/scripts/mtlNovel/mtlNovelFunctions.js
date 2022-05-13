@@ -1,12 +1,17 @@
 // check for some functions you could make global
-const numberRegex = new RegExp(' \([0-9]+\.[0-9]+%\)', 'i');
-const numberRegex2 = new RegExp('Progress\: [0-9]+\/', 'i');
+const getTotalChapters1 = new RegExp('Progress\: [0-9]+\/', 'g');
+const getTotalChapters2 = new RegExp(' \([0-9]+\.[0-9]+%\)', 'g');
+const getCurrentChapter1 = new RegExp('Progress\: ', 'g');
+const getCurrentChapter2 = new RegExp('\/[0-9]+ \([0-9]+\.[0-9]+%\)', 'g');
+//const uukanshuRegExp = new RegExp('', 'g');
+//const mtlnovelRegExp = new RegExp('', 'g');
 const textFilterList = [	
 	"Genius remembers this site address in one second:",
 	"In order to facilitate the next reading, you can click",
 	": https://",
 	"please recommend this book to your friends (QQ, blog",
 	"PS: ",
+	"ps: ",
 	"Seeking flowers",
 	"Find the latest chapter",
 	"Please recommend this book to your friends",
@@ -18,6 +23,7 @@ var enableNovelHighlight = true;
 var enableNovelFilter = true;
 var enableNovelIgnore = true;
 var enableLightMode = false;
+var wpmReadingSpeed = 225;
 
 loadSettings();
 saveSettings();
@@ -34,7 +40,7 @@ document.documentElement.insertBefore(link, document.documentElement.firstChild)
 
 function loadSettings() {
 	if(window.localStorage.getItem("settingList") == null) {
-        window.localStorage.setItem("settingList","true,true,true,false"); //default enable all
+        window.localStorage.setItem("settingList","true,true,true,false,225"); //default
     }
 	let settings = window.localStorage.getItem("settingList").split(',');
 	
@@ -42,6 +48,7 @@ function loadSettings() {
 	enableNovelFilter = (settings[1] === 'true');
 	enableNovelIgnore = (settings[2] === 'true');
 	enableLightMode = (settings[3] === 'true');
+	wpmReadingSpeed = parseInt(settings[4]);
 }
 
 function saveSettings() {
@@ -51,10 +58,11 @@ function saveSettings() {
 	settings[1] = enableNovelFilter.toString();
 	settings[2] = enableNovelIgnore.toString();
 	settings[3] = enableLightMode.toString();
+	settings[4] = wpmReadingSpeed;
 
 	let stringSettings = settings.join(",");
 
-	window.localStorage.setItem("settingList",stringSettings); //default enable all
+	window.localStorage.setItem("settingList",stringSettings);
 }
 
 function createSettingsUI() {
@@ -83,7 +91,7 @@ function createSettingsUI() {
 
 		let text = document.createElement("div");
 		text.innerText = "Enable Light Mode";
-		text.setAttribute("class", "textForToggle");
+		text.setAttribute("class", "textForSetting");
 
 		let lable = document.createElement("lable");
 		lable.setAttribute("class", "toggle");
@@ -119,10 +127,11 @@ function createSettingsUI() {
 	}
 	{
 		let container = document.createElement("span");
+		container.setAttribute("class","settingContainer");
 		
 		let text = document.createElement("div");
 		text.innerText = "Enable Novel Ignore List";
-		text.setAttribute("class", "textForToggle");
+		text.setAttribute("class", "textForSetting");
 
 		let lable = document.createElement("lable");
 		lable.setAttribute("class", "toggle");
@@ -157,10 +166,11 @@ function createSettingsUI() {
 	}
 	{
 		let container = document.createElement("span");
+		container.setAttribute("class","settingContainer");
 		
 		let text = document.createElement("div");
 		text.innerText = "Enable Novel Highlight";
-		text.setAttribute("class", "textForToggle");
+		text.setAttribute("class", "textForSetting");
 
 		let lable = document.createElement("lable");
 		lable.setAttribute("class", "toggle");
@@ -195,10 +205,11 @@ function createSettingsUI() {
 	}
 	{
 		let container = document.createElement("span");
+		container.setAttribute("class","settingContainer");
 		
 		let text = document.createElement("div");
 		text.innerText = "Enable Genre Filter";
-		text.setAttribute("class", "textForToggle");
+		text.setAttribute("class", "textForSetting");
 
 		let lable = document.createElement("lable");
 		lable.setAttribute("class", "toggle");
@@ -224,6 +235,32 @@ function createSettingsUI() {
 		lable.appendChild(onOffSpan);
 		
 		container.appendChild(lable);
+		container.appendChild(text);
+
+		let newline = document.createElement("div");
+
+		containerDiv.appendChild(container);
+		containerDiv.appendChild(newline);
+	}
+	{
+		let container = document.createElement("span");
+		container.setAttribute("class","settingContainer");
+		
+		let text = document.createElement("div");
+		text.textContent = "WPM Reading Speed";
+		text.setAttribute("class", "textForSetting");
+
+		let input = document.createElement("input");
+		input.setAttribute("type","number");
+		input.id = "inputWPMNumber"
+		input.value = wpmReadingSpeed;
+		input.onchange = function() {
+			wpmReadingSpeed = input.value;
+			text.textContent = "WPM Reading Speed";
+			saveSettings();
+		};
+		
+		container.appendChild(input);
 		container.appendChild(text);
 
 		let newline = document.createElement("div");
