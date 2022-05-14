@@ -4,25 +4,27 @@ let text = copyText();
 let progressBarDiv = document.createElement("div");
 progressBarDiv.id="progress-bar";
 progressBarDiv.style="--scrollAmount: 0%;";
-progressBarDiv.textContent="~"+((text.split(" ").length)/wpmReadingSpeed).toFixed(1)+" minutes to read";
-if(document.getElementsByClassName("container")[0]!=undefined) {
-	document.getElementsByClassName("container")[0].appendChild(progressBarDiv);
+if(text = null) {
+	progressBarDiv.textContent="~"+((text.split(" ").length)/wpmReadingSpeed).toFixed(1)+" minutes to read";
+	if(document.getElementsByClassName("container")[0]!=undefined) {
+		document.getElementsByClassName("container")[0].appendChild(progressBarDiv);
+	}
+
+	let processScroll = () => {
+	let docElem = document.documentElement, 
+		docBody = document.body,
+		scrollTop = docElem['scrollTop'] || docBody['scrollTop'],
+		scrollBottom = (docElem['scrollHeight'] || docBody['scrollHeight']) - window.innerHeight,
+		scrollPercent = scrollTop / scrollBottom * 100 + '%';
+
+	// console.log(scrollTop + ' / ' + scrollBottom + ' / ' + scrollPercent);
+
+		document.getElementById("progress-bar").style.setProperty("--scrollAmount", scrollPercent); 
+		document.getElementById("progress-bar").textContent=((text.split(" ").length - text.split(" ").length * (scrollTop / scrollBottom))/wpmReadingSpeed).toFixed(1)+" minutes to read";
+	}
+
+	document.addEventListener('scroll', processScroll);
 }
-let processScroll = () => {
-let docElem = document.documentElement, 
-	docBody = document.body,
-	scrollTop = docElem['scrollTop'] || docBody['scrollTop'],
-	scrollBottom = (docElem['scrollHeight'] || docBody['scrollHeight']) - window.innerHeight,
-	scrollPercent = scrollTop / scrollBottom * 100 + '%';
-
-// console.log(scrollTop + ' / ' + scrollBottom + ' / ' + scrollPercent);
-
-	document.getElementById("progress-bar").style.setProperty("--scrollAmount", scrollPercent); 
-	document.getElementById("progress-bar").textContent=((text.split(" ").length - text.split(" ").length * (scrollTop / scrollBottom))/wpmReadingSpeed).toFixed(1)+" minutes to read";
-}
-
-document.addEventListener('scroll', processScroll);
-
 function createStorageIfNull() {
 	// create copy amount if null
 	if(window.localStorage.getItem("copyAmount") == null || window.localStorage.getItem("copyAmount") == "NaN") {
@@ -86,6 +88,7 @@ function copyText() {
 		document.getElementById("storageTextLengthCounterLbl").textContent = (storedText.length*8/8000000) + " MB ["+storedText.split(' ').length+" words]"+" ~"+(window.localStorage.getItem("textContent").split(' ').length/wpmReadingSpeed).toFixed(1)+" minutes to read";
 		return text;
 	}
+	return null;
 }
 
 function createUI() {
