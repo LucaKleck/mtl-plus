@@ -20,4 +20,6 @@ UUkanshu.com
 
 Installation
 
+Download the latest release at https://github.com/LucaKleck/mtl-plus/releases
+
 Find a place you want to keep the extension stored unpack it as a folder, then enter chrome development mode on the top right side (google chrome) of the extensions page. After that the top left side will have a "load unpacked" button, press it navigate to the place you stored the extension folder, select the folder and now you're good to go.
