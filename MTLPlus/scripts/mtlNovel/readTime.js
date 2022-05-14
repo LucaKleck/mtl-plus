@@ -3,9 +3,11 @@ if(document.location.href.includes("www.mtlnovel.com/library")) {
         addEstematedReadingTimeLableBoxRead(element);
     }
 } else {
-    for(let element of document.getElementsByClassName("box wide")) {
-        addEstematedReadingTimeLableBox(element);
-    }
+    setTimeout(() => {
+		for(let element of document.getElementsByClassName("box wide")) {
+			addEstematedReadingTimeLableBox(element);
+		}
+	}, timeoutTime+1);
 }
 
 /**
@@ -37,7 +39,7 @@ if(document.location.href.includes("www.mtlnovel.com/library")) {
                 if(length < 700) {
                     length = 1250;
                 }
-                lable.textContent = ("~"+Math.ceil(length*chaptersLeft/wpmReadingSpeed/60)+" hours to read");
+                lable.textContent = ("~"+(length*chaptersLeft/wpmReadingSpeed/60).toFixed(2)+" hours to read");
             }
         }
     }
@@ -82,7 +84,7 @@ function setReadingTime(chapterLink, lable) {
 							if(length < 700) {
 								length = 1250;
 							}
-							lable.textContent = ("~"+Math.ceil(length*chapters/wpmReadingSpeed/60)+" hours to read");
+							lable.textContent = ("~"+(length*chapters/wpmReadingSpeed/60).toFixed(2)+" hours to read");
 						}
 					}
 				}		

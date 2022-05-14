@@ -74,7 +74,7 @@ function createUiElements() {
             aOrh3.parentElement.appendChild(addToListBtn);
             ignoreItems(aOrh3)
         });
-    }, 50);
+    }, timeoutTime);
 
     document.getElementsByClassName("main-title")[0].parentNode.insertBefore(ignoreListDiv,document.getElementsByClassName("main-title")[0].nextSibling);
 }

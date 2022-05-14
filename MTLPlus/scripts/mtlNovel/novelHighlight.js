@@ -98,7 +98,7 @@ function createUiElements() {
                 }
             }
         }
-    }, 60);
+    }, timeoutTime);
 
     document.getElementsByClassName("main-title")[0].parentNode.insertBefore(highlightListDiv,document.getElementsByClassName("main-title")[0].nextSibling);
 }

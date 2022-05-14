@@ -3,6 +3,7 @@ const getTotalChapters1 = new RegExp('Progress\: [0-9]+\/', 'g');
 const getTotalChapters2 = new RegExp(' \([0-9]+\.[0-9]+%\)', 'g');
 const getCurrentChapter1 = new RegExp('Progress\: ', 'g');
 const getCurrentChapter2 = new RegExp('\/[0-9]+ \([0-9]+\.[0-9]+%\)', 'g');
+const timeoutTime = 3;
 //const uukanshuRegExp = new RegExp('', 'g');
 //const mtlnovelRegExp = new RegExp('', 'g');
 const textFilterList = [	
