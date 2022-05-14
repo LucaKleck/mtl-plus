@@ -442,7 +442,7 @@ a.genre:hover {
 #progress-bar {
     --scrollAmount: 0%;
     
-    background-image: linear-gradient(120deg, var(--secondary-elem) 0%, var(--secondary-accent) 100%);
+    background-image: linear-gradient(120deg, var(--secondary-dark) 0%, var(--secondary-accent) 100%);
     width: var(--scrollAmount);
   
     /*  background: linear-gradient(to right, #F24E1E var(--scrollAmount), transparent 0);

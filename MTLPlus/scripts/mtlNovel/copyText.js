@@ -4,7 +4,7 @@ let text = copyText();
 let progressBarDiv = document.createElement("div");
 progressBarDiv.id="progress-bar";
 progressBarDiv.style="--scrollAmount: 0%;";
-if(text = null) {
+if(text != null) {
 	progressBarDiv.textContent="~"+((text.split(" ").length)/wpmReadingSpeed).toFixed(1)+" minutes to read";
 	if(document.getElementsByClassName("container")[0]!=undefined) {
 		document.getElementsByClassName("container")[0].appendChild(progressBarDiv);
