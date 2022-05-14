@@ -12,9 +12,11 @@ Features
  -  Countdown on publishing site
  -  Text Copy feature, copy and paste hundreds of chapters quickly (word count included) max ~4.5 mb due to local storage limit
  -  CSS Overhaul + Light mode (original style) toggle
+ -  Reading progress bar
 
 UUkanshu.com
 
+Features
  -  CSS overhaul
  -  Text Copy feature
 
