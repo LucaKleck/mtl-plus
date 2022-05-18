@@ -794,7 +794,7 @@ a.genre:hover {
 .box.car.view-more {
     background-color: var(--background-accent)!important;
 }
-
+/*SCROLLBAR*/
 ::-webkit-scrollbar {
     height: 4px!important;
     width: 12px!important;

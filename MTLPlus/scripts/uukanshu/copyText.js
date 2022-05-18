@@ -1,9 +1,11 @@
 const filterList = [
-    "Genius remembers this site address in one second:",
+    "Genius remembers",
+    "ps:",
+    "PS:",
+    "send flowers"
 ];
-
-
 var regex = new RegExp('.*[a-zA-Z].*', 'i');
+var uukanshu = new RegExp('(www)? ?\. ?uukanshu\.?(com)?', 'g');
 if(window.localStorage.getItem("enableScrolling") == null) {
     window.localStorage.setItem("enableScrolling", "true");
 } 
@@ -25,38 +27,33 @@ function createStorage() {
 }
 function checkCopyCondition() {
     if(document.getElementById("contentbox") != undefined) {
-        if (document.getElementById("contentbox").childNodes[3].firstChild == null || document.getElementById("contentbox").childNodes[3].firstChild.firstChild == null) {
-            if(document.getElementById("contentbox").querySelector(".ad_content") != null && document.getElementById("contentbox").querySelector(".ad_content").nextSibling.nodeType == 1 && document.getElementById("contentbox").querySelector(".ad_content").nextSibling.nodeName == "FONT") {
-                window.setTimeout(copy(false), 200);
-            } else {
-                if(enableScrolling == "true") {
-                    window.scrollTo({
-                        top: document.body.scrollHeight,
-                        left: 0,
-                        behavior: 'smooth'
-                    });
-                }
-                window.setTimeout(checkCopyCondition, 1000);
-                return;
-            }
+        if(    document.getElementById("contentbox").querySelector(".ad_content") != null
+            && document.getElementById("contentbox").querySelector("FONT") != null) {
+            window.setTimeout(copyNew(), 200);
         } else {
-            window.setTimeout(copy(true), 200);
+            if(enableScrolling == "true") {
+                window.scrollTo({
+                    top: document.body.scrollHeight,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            }
+            window.setTimeout(checkCopyCondition, 1000);
+            return;
         }
     }
 }
-function copy(isNested) {
+function copyNew() {
     let contentBox = document.getElementById("contentbox");
-    if (contentBox == undefined) { } else {
+    if (contentBox != undefined) {
         let textNodes = contentBox.childNodes;
         let chapter = "";
-        if(isNested) {
-            chapter += copyNodesToTextNested(textNodes);
-        } else {
-            chapter += copyNodesToText(textNodes);
-        }
+        chapter += copyNodesToText(textNodes);
         // filter text
         chapter = chapter.replaceAll("UU reading", "");
-        chapter = chapter.replaceAll("&nbsp;", "");
+        chapter = chapter.replaceAll(uukanshu, "");
+        chapter = chapter.replaceAll("&nbsp;", "\n\n");
+        chapter = chapter.replaceAll("    ", "\n");
 
         // Text sending
         navigator.clipboard.writeText(chapter);
@@ -69,22 +66,6 @@ function copy(isNested) {
             storedText += chapter;
             window.localStorage.setItem("textContent", storedText);
         }
-        /*
-        // mark selected
-        if (document.body.createTextRange) {
-            const range = document.body.createTextRange();
-            range.moveToElementText(contentBox);
-            range.select();
-        } else if (window.getSelection) {
-            const selection = window.getSelection();
-            const range = document.createRange();
-            range.selectNodeContents(contentBox);
-            selection.removeAllRanges();
-            selection.addRange(range);
-        } else {
-            console.warn("Could not select text in node: Unsupported browser.");
-        }
-        */
        if (window.localStorage.getItem("copyAmount") > 0) {
            setCopyAmount((parseInt(window.localStorage.getItem("copyAmount")) - 1));
            nextChapter();
@@ -98,7 +79,7 @@ function copy(isNested) {
 function copyNodesToText(nodes) {
     let paragraph = "";
     nodes.forEach(contentBoxElement => {
-        if (contentBoxElement.textContent != undefined && (contentBoxElement.nodeType == 1 && contentBoxElement.nodeName == "FONT")) {
+        if (contentBoxElement.textContent != undefined && contentBoxElement.nodeName == "FONT" || contentBoxElement.nodeName == "P" ) {
             if (
                 contentBoxElement.firstChild == null
                 ||(contentBoxElement.textContent.includes("You can search for ") && contentBoxElement.textContent.includes("in Baidu to find the latest chapters"))
@@ -110,27 +91,6 @@ function copyNodesToText(nodes) {
             }
         }
 
-    });
-    return paragraph;
-}
-/**
-* @param {NodeListOf<ChildNode>} nodes
-*/
-function copyNodesToTextNested(nodes) {
-    let paragraph = "";
-    nodes.forEach(contentBoxElement => {
-        if (contentBoxElement.firstChild != null && contentBoxElement.firstChild.firstChild != null) {
-            if (contentBoxElement.textContent != undefined && (contentBoxElement.nodeName == "P")) {
-                if (
-                    (contentBoxElement.textContent.includes("You can search for ") && contentBoxElement.textContent.includes("in Baidu to find the latest chapters"))
-                    || contentBoxElement.textContent == "　　"
-                    || !contentBoxElement.textContent.match(regex)
-                    || checkFilterList(contentBoxElement.textContent)
-                ) {/*Dont add to text*/ } else {
-                    paragraph = paragraph + contentBoxElement.textContent + "\n\n";
-                }
-            }
-        }
     });
     return paragraph;
 }

@@ -1,0 +1,153 @@
+:root {
+    --background-surface: #201e22;
+    --background-darkend: #0c0b0e;
+    --background-shadow: #15111f;
+    --background-element: #151318;
+    --background-accent: #231f27;
+    --background-accent-transparent: #231f2750;
+    --background-brightAccent: #e5d6ee;
+    --elemLayer: #1f1e24;
+    --elemLayer-transparent: #1f1e2450;
+    --elemLayer-accent: #312e38;
+    --textOnElem: #d4c8e0;
+    --textOnElemGrey:#8a8294e;
+    --secondary-main: #045b62;
+    --secondary-accent: #3d8086;
+    --secondary-elem: #0d484e;
+    --secondary-dark: #02393e;
+    --colorLink: #fad7a2;
+    --colorLinkHover: #c48040;
+    --colorLinkVisited: #e27739;
+    --noColor: #0000;
+    font-family: Tahoma, Verdana, Segoe, sans-serif!important; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400;
+}
+div {
+    overflow: unset!important;
+    background-color: var(--background-surface)!important;
+    color: var(--textOnElem)!important;
+}
+a {
+    color: var(--colorLink)!important;
+}
+div.novelslist ul li {
+    overflow: unset!important;
+    display: block!important;
+    white-space: break-spaces!important;
+    height: fit-content!important;
+}
+img {
+    border-radius: 12px;
+    transition: 0.2s;
+    transform:scale(1.0);
+}
+img:hover{
+    transform:scale(1.2);
+}
+/*NON GENERIC*/
+#hotcontent div.item dl dd {
+    overflow: scroll!important;
+}
+#hotcontent .l, #hotcontent .r, div.novelslist, #newscontent div, #newscontent h2, #hotcontent h2, #hotcontent .l .item {
+    border-color: var(--elemLayer-accent)!important;
+    border-radius: 12px;
+}
+#hotcontent, #hotcontent div, div.r, .novelslist .content h2, #newscontent h2 ,#hotcontent h2{
+    background-color: var(--background-element)!important;
+}
+#newscontent .l li span a {
+    color: var(--colorLink)!important;
+}
+#newscontent .l li span a:hover {
+    color: var(--colorLinkHover)!important;
+}
+#newscontent .l li span a:visited {
+    color: var(--colorLinkVisited)!important;
+}
+#newscontent .l li {
+    height: fit-content!important;
+}
+#newscontent .r li, #hotcontent .r li {
+    height: fit-content!important;
+}
+.head .return a{
+    padding: 10px!important;
+    background-color: var(--secondary-elem)!important;
+    border-radius: 12px!important;
+    font-variant-caps: all-petite-caps!important;
+}
+.head .return a:hover {
+    background-color: var(--secondary-accent)!important;
+}
+.head .return a:active {
+    background-color: var(--secondary-dark)!important;
+}
+div.tab1 p {
+    color: var(--background-darkend)!important;
+}
+/*MOBILE*/
+.menu1 .listtext .pp1 a {
+    color: var(--background-darkend)!important;
+}
+ul li.listtext {
+    height: fit-content!important;
+}
+ul.p2 li:nth-child(even) {
+    background-color: var(--elemLayer-accent)!important;
+}
+.catalog1 h1 {
+   overflow: visible!important;
+   white-space: nowrap!important;
+    /* animation properties */
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  -webkit-animation: my-animation 10s linear infinite;
+  animation: my-animation 10s linear infinite;
+}
+.info_chapters .p1 {
+    background-color: var(--elemLayer)!important;
+    overflow: visible!important;
+    white-space: nowrap!important;
+    /* animation properties */
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
+}
+/*NO DISPLAY*/
+div.ywtop, #st, #chapterSet[style="width: 65px;"] p:not(#showSet) {
+    display: none!important;
+}
+/*SCROLLBAR*/
+::-webkit-scrollbar {
+    height: 4px!important;
+    width: 12px!important;
+    border: 1px solid var(--secondary-accent)!important;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0!important;
+  background: var(--secondary-accent)!important;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0!important;
+  background: var(--secondary-dark)!important;
+}
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
