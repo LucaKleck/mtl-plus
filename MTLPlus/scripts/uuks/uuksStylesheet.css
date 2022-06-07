@@ -36,44 +36,13 @@ a:hover {
     color: var(--colorLinkVisited)!important;
 }
 /*Remove*/
-.sao_mobile_box {
+.sao_mobile_box, .box_right, .tips, .copyright, .xiaoshuo_shuoming, .cont_tuijian,
+#st, .RMss1, .dirAd, .readset .setcolor, .readset .padrig, #queries,
+.setreset.default_user_setting, .hot-recommend, .zw1ljPz {
     display: none!important;
 }
-.box_right {
-    display: none!important;
-}
-.tips {
-    display: none!important;
-}
-#st {
-    display: none!important;
-}
-.dirAd {
-    display: none!important;
-}
-.readset .setcolor {
-    display: none!important;
-}
-.readset .padrig {
-    display: none!important;
-}
-#queries {
-    display: none!important;
-}
-.setreset.default_user_setting {
-    display: none!important;
-}
-.hot-recommend {
-    display: none!important;
-}
-.cont_tuijian {
-    display: none!important;
-}
-.xiaoshuo_shuoming {
-    display: none!important;
-}
-.copyright {
-    display: none!important;
+.top {
+    background-color: var(--secondary-dark) !important;
 }
 /*SEARCH*/
 .gsc-control-cse,.gsc-control-cse *{
@@ -352,6 +321,9 @@ ul li {
     margin-bottom: -12px!important;
     border-bottom: 3px solid var(--secondary-dark)!important;
 }
+.h1title {
+    overflow: visible!important;
+}
 .shuming, .shuming * {
     display: inline-block!important;
     color: var(--secondary-elem)!important;
@@ -386,12 +358,10 @@ span.author *{
 }
 .zhengwan_top .srcbox {
     height: fit-content!important;
-    white-space: nowrap!important;
+    display: flex !important;
+    width: 100% !important;
+    flex-wrap: wrap !important;
     z-index: 9!important;
-    position: absolute!important;
-    top:132px!important;
-    left: 0px!important;
-    width: 100%!important;
     color: var(--secondary-accent)!important;
     font-size: 1em!important;
     text-align: center!important;

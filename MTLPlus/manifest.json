@@ -2,7 +2,7 @@
   "name": "MTLPlus",
   "description": "A work in progress all around improvement and change for some MTL novel sites",
   "author": "eSaltcracker",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
@@ -15,6 +15,10 @@
     {
       "resources": ["scripts/uukanshu/uukanshuStylesheet.css"],
       "matches": ["https://*.uukanshu.com/*"]
+    },
+    {
+      "resources": ["scripts/uuks/uuksStylesheet.css"],
+      "matches": ["https://*.uuks.org/*"]
     }
   ],
   "content_scripts": [
@@ -51,12 +55,21 @@
     },
     {
       "run_at": "document_start",
-      "matches": ["https://www.uukanshu.com/*"],
+      "matches": ["https://*.uukanshu.com/*"],
       "js": ["scripts/uukanshu/uukanshuFunctions.js"]
     },
     {
-      "matches": ["https://www.uukanshu.com/b/*/*"],
+      "matches": ["https://*.uukanshu.com/b/*/*"],
       "js": ["scripts/uukanshu/copyText.js"]
+    },
+    {
+      "run_at": "document_start",
+      "matches": ["https://*.uuks.org/*"],
+      "js": ["scripts/uuks/uuksFunctions.js"]
+    },
+    {
+      "matches": ["https://*.uuks.org/b/*/*"],
+      "js": ["scripts/uuks/copyText.js"]
     }
   ],
   "permissions": ["activeTab", "scripting"],

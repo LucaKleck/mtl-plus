@@ -5,7 +5,7 @@ const filterList = [
     "send flowers"
 ];
 var regex = new RegExp('.*[a-zA-Z].*', 'i');
-var uukanshu = new RegExp('(www)? ?\. ?uukanshu\.?(com)?', 'g');
+var uukanshu = new RegExp('(www)? ?\. ?uuks\.?(org)?', 'g');
 if(window.localStorage.getItem("enableScrolling") == null) {
     window.localStorage.setItem("enableScrolling", "true");
 } 
@@ -27,8 +27,7 @@ function createStorage() {
 }
 function checkCopyCondition() {
     if(document.getElementById("contentbox") != undefined) {
-        if(    document.getElementById("contentbox").querySelector(".ad_content") != null
-            && document.getElementById("contentbox").querySelector("FONT") != null) {
+        if(document.getElementById("contentbox").querySelector("FONT") != null) {
             window.setTimeout(copy(), 200);
         } else {
             if(enableScrolling == "true") {
@@ -78,7 +77,7 @@ function copy() {
 */
 function copyNodesToText(nodes) {
     let singleChapter = "";
-    nodes.forEach(contentBoxElement => {
+    for(let contentBoxElement of nodes) {
         if (contentBoxElement.textContent != undefined && contentBoxElement.nodeName == "FONT" || contentBoxElement.nodeName == "P" ) {
             if (
                 contentBoxElement.firstChild == null
@@ -91,7 +90,7 @@ function copyNodesToText(nodes) {
             }
         }
 
-    });
+    }
     return singleChapter;
 }
 /**
