@@ -1,0 +1,98 @@
+:root {
+    --bgColor: #121212;
+    --elColor: #212121;
+    --fgColor: #313131;
+    --highlightColor: #515151;
+    --txtColor: #e1e1e1;
+    --linkColor: #6eb2ff;
+    --linkHoverColor: #89c0ff;
+    --linkActiveColor: #3392ff;
+}
+
+.copyDiv {
+    width: 300px;
+    margin: auto;
+}
+
+.niceButton {
+    color: var(--txtColor);
+    font-weight: 600;
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 80px;
+    border: 2px solid #d3d1d1;
+    background-color: var(--bgColor);
+    border-radius: 30px;
+    margin: 2px;
+    margin-top: 5px;
+    transition: 0.7s;
+}
+
+.niceButton:hover {
+    color: var(--txtColor);
+    font-weight: 600;
+    display: inline-block;
+    border: 2px solid #a2a2a2;
+    background-color: var(--elColor);
+}
+
+.niceButton:hover:active {
+    background-color: var(--highlightColor);
+}
+
+.deleted {
+    background-color: #710612;
+}
+
+.copied {
+    background-color: #034106;
+}
+
+.deleted:hover {
+    background-color: #410209;
+}
+
+.copied:hover {
+    background-color: #045008;
+}
+
+.deleted:active:hover {
+    background-color: #a7081a;
+}
+
+.copied:active:hover {
+    background-color: #08a30f;
+}
+
+#inputCopyAmount {
+    color: var(--textOnElem);
+    font-weight: 600;
+    background-color: var(--background-element)!important;
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px solid #d3d1d1;
+    background-color: #1717173d;
+    border-radius: 30px;
+    margin: 2px;
+    transition: 0.7s;
+    width: 120px;
+}
+#inputCopyAmount::-webkit-inner-spin-button, #inputCopyAmount::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    background: #fff    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAYAAADgkQYQAAAAKUlEQVQYlWNgwAT/sYhhKPiPT+F/LJgEsHv37v+EMGkmkuImoh2NoQAANlcun/q4OoYAAAAASUVORK5CYII=)     no-repeat center center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 1em;
+    border-left: 1px solid #bbb;
+    opacity: .5; /* shows Spin Buttons per default (Chrome >= 39) */
+}
+
+#copyAmountLbl {
+    font-variant-caps: all-small-caps!important;
+}
+#storageTextLengthCounterLbl {
+    font-variant-caps: all-small-caps!important;
+}

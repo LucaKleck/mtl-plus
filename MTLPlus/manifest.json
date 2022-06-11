@@ -2,7 +2,7 @@
   "name": "MTLPlus",
   "description": "A work in progress all around improvement and change for some MTL novel sites",
   "author": "eSaltcracker",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
@@ -13,12 +13,20 @@
       "matches": ["https://*.mtlnovel.com/*"]
     },
     {
+      "resources": ["scripts/globalStyle.css"],
+      "matches": ["<all_urls>"]
+    },
+    {
       "resources": ["scripts/uukanshu/uukanshuStylesheet.css"],
       "matches": ["https://*.uukanshu.com/*"]
     },
     {
       "resources": ["scripts/uuks/uuksStylesheet.css"],
       "matches": ["https://*.uuks.org/*"]
+    },
+    {
+      "resources": ["scripts/librarynovel/librarynovelStylesheet.css"],
+      "matches": ["https://*.librarynovel.com/*"]
     }
   ],
   "content_scripts": [
@@ -70,6 +78,15 @@
     {
       "matches": ["https://*.uuks.org/b/*/*"],
       "js": ["scripts/uuks/copyText.js"]
+    },
+    {
+      "run_at": "document_start",
+      "matches": ["https://*.librarynovel.com/*"],
+      "js": ["scripts/librarynovel/librarynovelFunctions.js", "scripts/globalFunctions.js"]
+    },
+    {
+      "matches": ["https://*.librarynovel.com/novel/*/*"],
+      "js": ["scripts/librarynovel/copyText.js"]
     }
   ],
   "permissions": ["activeTab", "scripting"],

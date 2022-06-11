@@ -5,7 +5,7 @@ const filterList = [
     "send flowers"
 ];
 var regex = new RegExp('.*[a-zA-Z].*', 'i');
-var uukanshu = new RegExp('(www)? ?\. ?uukanshu\.?(com)?', 'g');
+var siteUrlFilter = new RegExp('(www)? ?\. ?uukanshu\.?(com)?', 'g');
 if(window.localStorage.getItem("enableScrolling") == null) {
     window.localStorage.setItem("enableScrolling", "true");
 } 
@@ -51,7 +51,7 @@ function copy() {
         chapter += copyNodesToText(textNodes);
         // filter text
         chapter = chapter.replaceAll("UU reading", "");
-        chapter = chapter.replaceAll(uukanshu, "");
+        chapter = chapter.replaceAll(siteUrlFilter, "");
         chapter = chapter.replaceAll("&nbsp;", "\n\n");
         chapter = chapter.replaceAll("    ", "\n");
 
