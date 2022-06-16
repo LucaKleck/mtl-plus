@@ -96,3 +96,24 @@
 #storageTextLengthCounterLbl {
     font-variant-caps: all-small-caps!important;
 }
+/*SCROLLBAR*/
+::-webkit-scrollbar {
+    height: 4px;
+    width: 11px;
+    border: 1px solid var(--elColor);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background: var(--bgColor);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: var(--elColor);
+  border: 2px var(--bgColor) solid;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fgColor);
+}

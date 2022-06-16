@@ -794,22 +794,7 @@ a.genre:hover {
 .box.car.view-more {
     background-color: var(--background-accent)!important;
 }
-/*SCROLLBAR*/
-::-webkit-scrollbar {
-    height: 4px!important;
-    width: 12px!important;
-    border: 1px solid var(--secondary-accent)!important;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 0!important;
-  background: var(--secondary-accent)!important;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 0!important;
-  background: var(--secondary-dark)!important;
-}   
+ 
 #first-btn, #view-all, a.small-btn {
     color: var(--textOnElem)!important;
     background-color: var(--secondary-main)!important;
@@ -847,4 +832,25 @@ a.recent-novels:hover {
     left: 0px;
     text-indent: 12px;
     line-height: 25px;
-  }
+}
+/*SCROLLBAR*/
+::-webkit-scrollbar {
+    height: 4px;
+    width: 11px;
+    border: 1px solid var(--elemLayer-accent);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background: var(--background-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: var(--elemLayer-accent);
+  border: 2px var(--background-surface) solid;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--background-element);
+}

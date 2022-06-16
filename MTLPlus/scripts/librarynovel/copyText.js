@@ -26,7 +26,7 @@ function checkCopyCondition() {
     }
 }
 function copy() {
-    let contentBox = document.getElementsByClassName("reading-content")[0];
+    let contentBox = document.getElementsByClassName("reading-content")[0].getElementsByClassName("text-left")[0];
     let textNodes = contentBox.childNodes;
     let chapter = "";
     chapter += copyNodesToText(textNodes);
@@ -60,7 +60,7 @@ function copyNodesToText(nodes) {
     nodes.forEach(contentBoxElement => {
         if (contentBoxElement.textContent != undefined) {
             if (
-                (contentBoxElement.textContent.includes("You can search for ") && contentBoxElement.textContent.includes("in Baidu to find the latest chapters"))
+                (contentBoxElement.textContent.includes("Translator:"))
                 || contentBoxElement.textContent == "　　"
                 || !contentBoxElement.textContent.match(regex)
                 || checkFilterList(contentBoxElement.textContent)

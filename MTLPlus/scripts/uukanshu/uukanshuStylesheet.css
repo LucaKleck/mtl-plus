@@ -346,10 +346,11 @@ ul li {
     text-align: left!important;
     display: block!important;
     z-index: 9!important;
-    color: var(--secondary-elem);
+    color: var(--secondary-accent);
     height: fit-content!important;
     padding-bottom: 3px!important;
-    margin-bottom: -12px!important;
+}
+#timu font font:last-child {
     border-bottom: 3px solid var(--secondary-dark)!important;
 }
 .shuming, .shuming * {
@@ -371,6 +372,7 @@ span.author *{
     background: none!important;
     margin: 0px!important;
     padding: 0px!important;
+    margin-bottom: -12px!important;
 }
 .shuming > font:first-of-type * {
     color: var(--secondary-accent)!important;
@@ -529,23 +531,7 @@ div[style="margin:0px;"] {
     width: 1em!important;
     border-left: 1px solid var(--elemLayer-accent)!important;
     opacity: .5!important; /* shows Spin Buttons per default (Chrome >= 39) */
-}
-
-::-webkit-scrollbar {
-    height: 0px!important;
-    width: 12px!important;
-    border: 1px solid var(--elemLayer)!important;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 0!important;
-  background: var(--elemLayer)!important;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 0!important;
-  background: var(--background-darkend)!important;
-}  
+} 
 
 /*MOBILE VERSION*/
 .topheadbox {
@@ -601,4 +587,25 @@ div.desc {
 }
 .listbox .list_cont ul.fl-list-ul li:nth-child(even) {
     background: var(--elemLayer-accent)!important;
+}
+/*SCROLLBAR*/
+::-webkit-scrollbar {
+    height: 4px;
+    width: 11px;
+    border: 1px solid var(--elemLayer-accent);
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background: var(--background-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: var(--elemLayer-accent);
+  border: 2px var(--background-surface) solid;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--background-element);
 }
