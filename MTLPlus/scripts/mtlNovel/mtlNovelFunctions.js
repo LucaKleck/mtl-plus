@@ -1,3 +1,7 @@
+let load = document.createElement("div");
+load.id = "loadPre"
+load.style = "height:100vh; width:100vw; background-color:#000; position: fixed; top:0; left:0; z-index:99;";
+document.documentElement.appendChild(load);
 // check for some functions you could make global
 const getTotalChapters1 = new RegExp('Progress\: [0-9]+\/', 'g');
 const getTotalChapters2 = new RegExp(' \([0-9]+\.[0-9]+%\)', 'g');
@@ -38,6 +42,10 @@ if(enableLightMode) {
 link.type = "text/css";
 link.rel = "stylesheet";
 document.documentElement.insertBefore(link, document.documentElement.firstChild);
+
+setTimeout(() => {
+	load.remove();
+}, 200);
 
 function loadSettings() {
 	if(window.localStorage.getItem("settingList") == null) {

@@ -2,7 +2,7 @@
   "name": "MTLPlus",
   "description": "A work in progress all around improvement and change for some MTL novel sites",
   "author": "eSaltcracker",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"

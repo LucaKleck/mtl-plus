@@ -2,7 +2,12 @@ const filterList = [
     "Genius remembers",
     "ps:",
     "PS:",
-    "send flowers"
+    "send flowers",
+    "It’s so easy to use, I rely on this reading aloud to pass the time before driving and before going to bed, you can download it here",
+    "The book chasing app recommended to me by an old book friend who I have known for ten years, Mimi read",
+    "In other words, the best app for reading aloud and listening to books at present, Mimi Read, install the latest version",
+    "Click to download this site APP, massive novels, free to read",
+    "To tell the truth, recently I have been using Mimi to read and read books to keep up with updates, switch sources, and read aloud tones, which can be used on Android and Apple"
 ];
 var regex = new RegExp('.*[a-zA-Z].*', 'i');
 var siteUrlFilter = new RegExp('(www)? ?\. ?uukanshu\.?(com)?', 'g');
