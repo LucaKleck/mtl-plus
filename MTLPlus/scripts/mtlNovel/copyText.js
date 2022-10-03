@@ -129,7 +129,7 @@ function createUI() {
 		copyInputAmountBtn.className  = "niceButton";
 
 		copyInputAmountBtn.onclick = function () {
-			let amount = parseInt(window.localStorage.getItem("copyAmount"))+parseInt(document.getElementById("inputCopyAmount").value);
+			let amount = parseInt(window.localStorage.getItem("copyAmount"))+parseInt(document.getElementById("inputCopyAmount").value - 1);
 			window.localStorage.setItem("copyAmount", amount);
 			nextChapter();
 		}
